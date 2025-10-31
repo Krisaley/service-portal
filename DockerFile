@@ -11,4 +11,4 @@ COPY . .
 RUN chmod +x setup.sh
 
 # Run setup.sh when the container starts
-CMD ["./setup.sh"]
+CMD ["/var/www/html/setup.sh"]
