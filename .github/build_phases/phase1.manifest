@@ -1,0 +1,29 @@
+{
+  "phase": 1,
+  "label": "Core Foundation",
+  "goals": [
+    "Enable multi-tenant auth and team scoping",
+    "Build dashboard shell and module loader",
+    "Validate install/uninstall of modules"
+  ],
+  "core": [
+    "Jetstream auth with team support",
+    "Spatie Multitenancy (PathTenantFinder)",
+    "Volt dashboard shell",
+    "Module loader (manifest-based)",
+    "Settings framework (per-tenant)",
+    "Permission system (Spatie Roles)",
+    "Installer CLI (module:install, module:list)"
+  ],
+  "modules": [
+    "customers",
+    "products",
+    "assets",
+    "dashboard"
+  ],
+  "testing": [
+    "Pest tests for core + modules",
+    "Health check endpoint",
+    "CI pipeline"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "phase": 2,
+  "label": "Operational Workflows",
+  "modules": [
+    "jobs",
+    "workshop_intake",
+    "scheduling"
+  ],
+  "features": [
+    "Create job from dashboard",
+    "Assign technician → schedule → mark complete",
+    "Workshop intake form with asset linkage"
+  ],
+  "integrations": [
+    "Calendar sync (Google/Outlook)",
+    "SMS/email notifications"
+  ]
+}

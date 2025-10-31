@@ -1,0 +1,18 @@
+{
+  "phase": 4,
+  "label": "Warranty & Compliance",
+  "modules": [
+    "warranty_checker",
+    "compliance_tracker",
+    "audit_trail"
+  ],
+  "features": [
+    "Warranty auto-check on job creation",
+    "Compliance dashboard per asset",
+    "Exportable audit logs (PDF/CSV)"
+  ],
+  "integrations": [
+    "Manufacturer portals",
+    "Document storage (OneDrive, Google Drive)"
+  ]
+}

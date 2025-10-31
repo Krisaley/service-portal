@@ -1,0 +1,13 @@
+{
+  "name": "dashboard",
+  "label": "User Dashboard",
+  "description": "Role-based dashboard with KPIs, quick links, and recent activity.",
+  "version": "1.0.0",
+  "author": "KrisAley",
+  "depends_on": ["customers", "assets"],
+  "routes": ["routes/web.php"],
+  "migrations": [],
+  "seeders": [],
+  "permissions": ["view_dashboard"],
+  "settings": ["dashboard.show_kpis", "dashboard.quick_links"]
+}

@@ -1,0 +1,14 @@
+{
+  "phase": 6,
+  "label": "Reporting & Insights",
+  "modules": [
+    "reports",
+    "insights",
+    "ai_assist"
+  ],
+  "features": [
+    "Custom report builder",
+    "KPI widgets on dashboard",
+    "Smart job routing suggestions"
+  ]
+}

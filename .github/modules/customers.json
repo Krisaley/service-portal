@@ -1,0 +1,13 @@
+{
+  "name": "customers",
+  "label": "Customer Management",
+  "description": "Registry of clients, contacts, and sites. Used by jobs, assets, and service modules.",
+  "version": "1.0.0",
+  "author": "KrisAley",
+  "depends_on": [],
+  "routes": ["routes/web.php"],
+  "migrations": ["database/migrations/create_customers_table.php"],
+  "seeders": ["database/seeders/CustomerSeeder.php"],
+  "permissions": ["view_customers", "create_customers", "edit_customers", "delete_customers"],
+  "settings": ["customer.default_status", "customer.contact_required"]
+}

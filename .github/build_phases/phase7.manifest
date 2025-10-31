@@ -1,0 +1,15 @@
+{
+  "phase": 7,
+  "label": "Industry Expansion",
+  "modules": [
+    "hvacsmart",
+    "fleetsmart",
+    "facilitysmart",
+    "module_marketplace"
+  ],
+  "features": [
+    "Field mapping per industry",
+    "Custom workflows per vertical",
+    "Billing per module/tenant"
+  ]
+}

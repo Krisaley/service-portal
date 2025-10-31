@@ -1,0 +1,18 @@
+{
+  "phase": 3,
+  "label": "Inventory & Procurement",
+  "modules": [
+    "inventory",
+    "purchase_orders",
+    "van_stock"
+  ],
+  "features": [
+    "Low-stock alerts",
+    "PO approval flow",
+    "Parts used on job → auto-decrement stock"
+  ],
+  "integrations": [
+    "Accounting (Xero, QuickBooks)",
+    "Supplier APIs"
+  ]
+}

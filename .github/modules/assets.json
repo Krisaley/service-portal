@@ -1,0 +1,13 @@
+{
+  "name": "assets",
+  "label": "Asset Registry",
+  "description": "Track MEWP and equipment assets by serial, location, and status.",
+  "version": "1.0.0",
+  "author": "KrisAley",
+  "depends_on": ["customers"],
+  "routes": ["routes/web.php"],
+  "migrations": ["database/migrations/create_assets_table.php"],
+  "seeders": ["database/seeders/AssetSeeder.php"],
+  "permissions": ["view_assets", "create_assets", "edit_assets", "delete_assets"],
+  "settings": ["assets.default_status", "assets.enable_qr"]
+}

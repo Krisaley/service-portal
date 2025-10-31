@@ -1,0 +1,17 @@
+{
+  "phase": 5,
+  "label": "Mobile & API",
+  "modules": [
+    "mobile_api",
+    "engineer_app"
+  ],
+  "features": [
+    "QR scan → view asset/job",
+    "Offline mode for job notes",
+    "Push notifications"
+  ],
+  "integrations": [
+    "Maps (routing)",
+    "Push services (Firebase, OneSignal)"
+  ]
+}

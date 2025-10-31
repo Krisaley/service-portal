@@ -1,0 +1,13 @@
+{
+  "name": "products",
+  "label": "Products & Services",
+  "description": "Catalog of parts and services used in jobs, quotes, and POs.",
+  "version": "1.0.0",
+  "author": "KrisAley",
+  "depends_on": [],
+  "routes": ["routes/web.php"],
+  "migrations": ["database/migrations/create_products_table.php"],
+  "seeders": ["database/seeders/ProductSeeder.php"],
+  "permissions": ["view_products", "create_products", "edit_products", "delete_products"],
+  "settings": ["products.default_tax_rate", "products.unit_types"]
+}
