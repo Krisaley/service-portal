@@ -1,0 +1,14 @@
+# Use Laravel Sail's PHP base image or a compatible PHP image
+FROM laravelsail/php80-composer
+
+# Set working directory inside container
+WORKDIR /var/www/html
+
+# Copy all project files into the container
+COPY . .
+
+# Ensure setup.sh is executable
+RUN chmod +x setup.sh
+
+# Run setup.sh when the container starts
+CMD ["./setup.sh"]
