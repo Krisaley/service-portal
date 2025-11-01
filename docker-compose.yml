@@ -61,7 +61,7 @@ services:
     volumes:
       - app-storage:/var/www/html/storage
       - app-bootstrap:/var/www/html/bootstrap/cache
-      - app-modules:/var/www/html/modules
+      # Removed app-modules to allow GitOps updates to modules directory
     networks:
       - laravel-network
     depends_on:
@@ -184,6 +184,7 @@ services:
       QUEUE_CONNECTION: redis
     volumes:
       - app-storage:/var/www/html/storage
+      - app-bootstrap:/var/www/html/bootstrap/cache
     networks:
       - laravel-network
     depends_on:
@@ -221,6 +222,7 @@ services:
       REDIS_PORT: 6379
     volumes:
       - app-storage:/var/www/html/storage
+      - app-bootstrap:/var/www/html/bootstrap/cache
     networks:
       - laravel-network
     depends_on:
@@ -262,8 +264,3 @@ volumes:
     driver: local
     labels:
       - "com.portainer.description=Laravel Bootstrap Cache"
-
-  app-modules:
-    driver: local
-    labels:
-      - "com.portainer.description=Laravel Modules"
