@@ -93,6 +93,9 @@ initial_clone() {
     # Setup git credentials if token provided
     setup_git_credentials
 
+    # Add safe directory to prevent git ownership errors
+    git config --global --add safe.directory /var/www/html
+
     # Remove existing directory if empty or invalid
     if [ -d "$PROJECT_DIR/.git" ]; then
         log INFO "Git repository already exists, pulling latest changes..."
@@ -124,10 +127,13 @@ initial_clone() {
         # Move cloned files to project directory
         log INFO "Moving repository to project directory..."
         mkdir -p "$PROJECT_DIR"
-        mv "$TEMP_CLONE"/.git "$PROJECT_DIR/" 2>/dev/null || true
-        mv "$TEMP_CLONE"/* "$PROJECT_DIR/" 2>/dev/null || true
-        mv "$TEMP_CLONE"/.[!.]* "$PROJECT_DIR/" 2>/dev/null || true
+
+        # Use cp -a to preserve all attributes, then remove temp
+        cp -a "$TEMP_CLONE"/. "$PROJECT_DIR/"
         rm -rf "$TEMP_CLONE"
+
+        # Fix ownership to www-data
+        chown -R www-data:www-data "$PROJECT_DIR"
 
         log SUCCESS "Repository cloned successfully"
     fi
