@@ -12,7 +12,7 @@ services:
       args:
         # Git repository configuration
         GIT_REPO: ${GIT_REPO:-https://github.com/Krisaley/service-portal.git}
-        GIT_BRANCH: ${GIT_BRANCH:-main}
+        GIT_BRANCH: ${GIT_BRANCH:-phase1-core}
         GIT_TOKEN: ${GIT_TOKEN:-}
     image: laravel-fsm-gitops:latest
     container_name: laravel-fsm-app
