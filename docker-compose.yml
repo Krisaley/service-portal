@@ -14,7 +14,7 @@ services:
         GIT_REPO: ${GIT_REPO:-https://github.com/Krisaley/service-portal.git}
         GIT_BRANCH: ${GIT_BRANCH:-phase1-core}
         GIT_TOKEN: ${GIT_TOKEN:-}
-    image: laravel-fsm-gitops:latest
+    image: laravel-fsm-gitops:v2
     container_name: laravel-fsm-app
     restart: unless-stopped
     ports:
@@ -164,7 +164,7 @@ services:
         GIT_REPO: ${GIT_REPO:-https://github.com/your-username/laravel-fsm.git}
         GIT_BRANCH: ${GIT_BRANCH:-phase1-core}
         GIT_TOKEN: ${GIT_TOKEN:-}
-    image: laravel-fsm-gitops:latest
+    image: laravel-fsm-gitops:v2
     container_name: laravel-fsm-queue
     restart: unless-stopped
     command: ["php", "artisan", "queue:work", "--tries=3"]
@@ -204,7 +204,7 @@ services:
         GIT_REPO: ${GIT_REPO:-https://github.com/your-username/laravel-fsm.git}
         GIT_BRANCH: ${GIT_BRANCH:-phase1-core}
         GIT_TOKEN: ${GIT_TOKEN:-}
-    image: laravel-fsm-gitops:latest
+    image: laravel-fsm-gitops:v2
     container_name: laravel-fsm-scheduler
     restart: unless-stopped
     command: ["/usr/local/bin/scheduler-entrypoint.sh"]
