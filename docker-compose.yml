@@ -92,16 +92,18 @@ services:
       MYSQL_ALLOW_EMPTY_PASSWORD: 'no'
     volumes:
       - mysql-data:/var/lib/mysql
-      - ./docker/mysql-init:/docker-entrypoint-initdb.d
+      # Temporarily disabled - testing database created manually if needed
+      # - ./docker/mysql-init:/docker-entrypoint-initdb.d
     networks:
       - laravel-network
     command: --default-authentication-plugin=mysql_native_password
     healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-p${DB_PASSWORD}"]
+      # Test connection with sail user - uses MYSQL_PASSWORD from container env
+      test: ["CMD-SHELL", "mysql -h localhost -u $$MYSQL_USER -p$$MYSQL_PASSWORD -e 'SELECT 1' >/dev/null 2>&1 || exit 1"]
       interval: 10s
       timeout: 5s
-      retries: 5
-      start_period: 30s
+      retries: 10
+      start_period: 40s
     labels:
       - "com.portainer.description=MySQL 8.0 Database"
 
