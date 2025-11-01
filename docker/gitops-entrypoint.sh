@@ -219,7 +219,15 @@ install_composer_dependencies() {
 install_npm_dependencies() {
     log INFO "Installing NPM dependencies..."
 
-    if npm ci --production 2>&1 | tee -a "$GITOPS_LOG"; then
+    # Use npm ci if package-lock.json exists, otherwise use npm install
+    if [ -f "package-lock.json" ]; then
+        NPM_CMD="npm ci --production"
+    else
+        log WARNING "No package-lock.json found, using npm install instead of npm ci"
+        NPM_CMD="npm install --production"
+    fi
+
+    if $NPM_CMD 2>&1 | tee -a "$GITOPS_LOG"; then
         log SUCCESS "NPM dependencies installed successfully"
 
         # Build assets if vite.config.js exists
@@ -228,8 +236,8 @@ install_npm_dependencies() {
             npm run build 2>&1 | tee -a "$GITOPS_LOG" || log WARNING "Asset build failed"
         fi
     else
-        log ERROR "Failed to install npm dependencies"
-        return 1
+        log WARNING "Failed to install npm dependencies, continuing anyway..."
+        return 0
     fi
 }
 
@@ -389,22 +397,25 @@ bootstrap_laravel_if_needed() {
 setup_laravel() {
     log INFO "Setting up Laravel application..."
 
-    # Generate app key if not exists
-    if ! grep -q "APP_KEY=base64:" .env 2>/dev/null; then
-        if [ -f "artisan" ]; then
-            log INFO "Generating application key..."
-            php artisan key:generate --force
-        fi
-    fi
-
-    # Create .env if doesn't exist
+    # Create .env if doesn't exist (MUST be first)
     if [ ! -f ".env" ]; then
         if [ -f ".env.example" ]; then
             log INFO "Creating .env from .env.example..."
             cp .env.example .env
-            php artisan key:generate --force
         else
-            log WARNING "No .env.example found"
+            log WARNING "No .env.example found, creating basic .env..."
+            echo "APP_NAME=Laravel" > .env
+            echo "APP_ENV=local" >> .env
+            echo "APP_KEY=" >> .env
+            echo "APP_DEBUG=true" >> .env
+        fi
+    fi
+
+    # Generate app key if not exists
+    if ! grep -q "APP_KEY=base64:" .env 2>/dev/null; then
+        if [ -f "artisan" ]; then
+            log INFO "Generating application key..."
+            php artisan key:generate --force 2>&1 || log WARNING "Failed to generate app key, will retry later"
         fi
     fi
 
