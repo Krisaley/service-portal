@@ -2,365 +2,357 @@
 
 namespace App\Services;
 
-use Illuminate\Support\Facades\File;
-use Illuminate\Support\Facades\Cache;
+use App\Models\InstalledModule;
+use App\Models\Module;
+use App\Models\Team;
 use Illuminate\Support\Facades\Artisan;
-use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 
+/**
+ * ModuleService
+ *
+ * Handles module installation, uninstallation, and management.
+ */
 class ModuleService
 {
-    protected string $modulesPath;
-    protected bool $cacheEnabled;
-
-    public function __construct()
-    {
-        $this->modulesPath = base_path(config('modules.path', 'modules'));
-        $this->cacheEnabled = config('modules.cache_enabled', true);
-    }
-
     /**
-     * Get all available modules
+     * Install a module for a team.
+     *
+     * @param Module $module
+     * @param Team $team
+     * @param int|null $userId
+     * @return array
      */
-    public function getAllModules(): Collection
+    public function install(Module $module, Team $team, ?int $userId = null): array
     {
-        $cacheKey = 'modules.all';
-        
-        if ($this->cacheEnabled && Cache::has($cacheKey)) {
-            return Cache::get($cacheKey);
-        }
-
-        $modules = collect();
-        
-        if (!File::exists($this->modulesPath)) {
-            return $modules;
-        }
-
-        $directories = File::directories($this->modulesPath);
-        
-        foreach ($directories as $directory) {
-            $manifest = $this->loadModuleManifest($directory);
-            if ($manifest) {
-                $modules->push($manifest);
-            }
-        }
-
-        if ($this->cacheEnabled) {
-            Cache::put($cacheKey, $modules, now()->addHours(24));
-        }
-
-        return $modules;
-    }
-
-    /**
-     * Get installed (active) modules
-     */
-    public function getInstalledModules(): Collection
-    {
-        return $this->getAllModules()->where('installed', true);
-    }
-
-    /**
-     * Load module manifest from directory
-     */
-    protected function loadModuleManifest(string $directory): ?array
-    {
-        $manifestPath = $directory . '/module.json';
-        
-        if (!File::exists($manifestPath)) {
-            return null;
-        }
-
-        $manifest = json_decode(File::get($manifestPath), true);
-        
-        if (!$manifest || !$this->validateManifest($manifest)) {
-            return null;
-        }
-
-        $manifest['path'] = $directory;
-        $manifest['slug'] = basename($directory);
-        $manifest['installed'] = $this->isModuleInstalled($manifest['slug']);
-        
-        return $manifest;
-    }
-
-    /**
-     * Validate module manifest structure
-     */
-    protected function validateManifest(array $manifest): bool
-    {
-        $required = ['name', 'version', 'description', 'author'];
-        
-        foreach ($required as $field) {
-            if (!isset($manifest[$field])) {
-                return false;
-            }
-        }
-
-        return true;
-    }
-
-    /**
-     * Check if module is installed
-     */
-    public function isModuleInstalled(string $slug): bool
-    {
-        return File::exists(database_path("modules/{$slug}_installed.flag"));
-    }
-
-    /**
-     * Install a module
-     */
-    public function installModule(string $slug): bool
-    {
-        $module = $this->getAllModules()->firstWhere('slug', $slug);
-        
-        if (!$module) {
-            throw new \Exception("Module {$slug} not found");
-        }
-
-        if ($this->isModuleInstalled($slug)) {
-            throw new \Exception("Module {$slug} is already installed");
-        }
-
-        // Check dependencies
-        if (!$this->checkDependencies($module)) {
-            throw new \Exception("Module {$slug} has unmet dependencies");
-        }
+        DB::beginTransaction();
 
         try {
-            // Run migrations
-            $this->runModuleMigrations($module);
-            
-            // Register permissions
-            $this->registerModulePermissions($module);
-            
-            // Copy assets
-            $this->copyModuleAssets($module);
-            
-            // Mark as installed
-            $this->markModuleInstalled($slug);
-            
-            // Clear cache
-            $this->clearModuleCache();
-            
-            return true;
-            
+            // Check if module is already installed
+            if ($this->isInstalled($module, $team)) {
+                return [
+                    'success' => false,
+                    'message' => 'Module is already installed for this team.',
+                ];
+            }
+
+            // Check if module is enabled globally
+            if (!$module->enabled) {
+                return [
+                    'success' => false,
+                    'message' => 'This module is not enabled. Please enable it globally first.',
+                ];
+            }
+
+            // Check dependencies
+            if ($module->hasUnmetDependencies()) {
+                $unmet = $module->getUnmetDependencies();
+                return [
+                    'success' => false,
+                    'message' => 'This module has unmet dependencies.',
+                    'dependencies' => $unmet,
+                ];
+            }
+
+            // Create installation record
+            InstalledModule::create([
+                'team_id' => $team->id,
+                'module_id' => $module->id,
+                'installed_at' => now(),
+                'installed_by' => $userId ?? auth()->id(),
+            ]);
+
+            // Run module-specific installation logic
+            $this->runModuleInstallation($module);
+
+            // Log activity
+            activity()
+                ->performedOn($module)
+                ->causedBy($userId ?? auth()->id())
+                ->withProperties(['team_id' => $team->id])
+                ->log('Module installed');
+
+            DB::commit();
+
+            return [
+                'success' => true,
+                'message' => "Module '{$module->name}' installed successfully.",
+            ];
         } catch (\Exception $e) {
-            // Rollback on failure
-            $this->rollbackModuleInstallation($slug);
-            throw $e;
+            DB::rollBack();
+            Log::error('Module installation failed', [
+                'module' => $module->slug,
+                'team_id' => $team->id,
+                'error' => $e->getMessage(),
+            ]);
+
+            return [
+                'success' => false,
+                'message' => 'Installation failed: ' . $e->getMessage(),
+            ];
         }
     }
 
     /**
-     * Uninstall a module
+     * Uninstall a module for a team.
+     *
+     * @param Module $module
+     * @param Team $team
+     * @return array
      */
-    public function uninstallModule(string $slug): bool
+    public function uninstall(Module $module, Team $team): array
     {
-        if (!$this->isModuleInstalled($slug)) {
-            throw new \Exception("Module {$slug} is not installed");
-        }
-
-        $module = $this->getAllModules()->firstWhere('slug', $slug);
-        
-        if (!$module) {
-            throw new \Exception("Module {$slug} not found");
-        }
-
-        // Check if other modules depend on this one
-        if ($this->hasDependentModules($slug)) {
-            throw new \Exception("Cannot uninstall {$slug}: other modules depend on it");
-        }
+        DB::beginTransaction();
 
         try {
-            // Rollback migrations
-            $this->rollbackModuleMigrations($module);
-            
-            // Remove permissions
-            $this->removeModulePermissions($module);
-            
-            // Remove assets
-            $this->removeModuleAssets($module);
-            
-            // Mark as uninstalled
-            $this->markModuleUninstalled($slug);
-            
-            // Clear cache
-            $this->clearModuleCache();
-            
-            return true;
-            
+            // Check if module is installed
+            if (!$this->isInstalled($module, $team)) {
+                return [
+                    'success' => false,
+                    'message' => 'Module is not installed for this team.',
+                ];
+            }
+
+            // Check if module is core (cannot be uninstalled)
+            if ($module->is_core) {
+                return [
+                    'success' => false,
+                    'message' => 'Core modules cannot be uninstalled.',
+                ];
+            }
+
+            // Check if other installed modules depend on this one
+            $dependents = $this->getDependentModules($module, $team);
+            if (!empty($dependents)) {
+                return [
+                    'success' => false,
+                    'message' => 'Cannot uninstall. Other modules depend on this module.',
+                    'dependents' => $dependents,
+                ];
+            }
+
+            // Remove installation record
+            InstalledModule::where('team_id', $team->id)
+                ->where('module_id', $module->id)
+                ->delete();
+
+            // Run module-specific uninstallation logic
+            $this->runModuleUninstallation($module);
+
+            // Log activity
+            activity()
+                ->performedOn($module)
+                ->causedBy(auth()->id())
+                ->withProperties(['team_id' => $team->id])
+                ->log('Module uninstalled');
+
+            DB::commit();
+
+            return [
+                'success' => true,
+                'message' => "Module '{$module->name}' uninstalled successfully.",
+            ];
         } catch (\Exception $e) {
-            throw new \Exception("Failed to uninstall module {$slug}: " . $e->getMessage());
+            DB::rollBack();
+            Log::error('Module uninstallation failed', [
+                'module' => $module->slug,
+                'team_id' => $team->id,
+                'error' => $e->getMessage(),
+            ]);
+
+            return [
+                'success' => false,
+                'message' => 'Uninstallation failed: ' . $e->getMessage(),
+            ];
         }
     }
 
     /**
-     * Check module dependencies
+     * Check if a module is installed for a team.
+     *
+     * @param Module $module
+     * @param Team $team
+     * @return bool
      */
-    protected function checkDependencies(array $module): bool
+    public function isInstalled(Module $module, Team $team): bool
     {
-        if (!isset($module['dependencies']) || empty($module['dependencies'])) {
-            return true;
-        }
+        return InstalledModule::where('team_id', $team->id)
+            ->where('module_id', $module->id)
+            ->exists();
+    }
 
-        foreach ($module['dependencies'] as $dependency) {
-            if (!$this->isModuleInstalled($dependency)) {
-                return false;
+    /**
+     * Get all installed modules for a team.
+     *
+     * @param Team $team
+     * @return \Illuminate\Database\Eloquent\Collection
+     */
+    public function getInstalledModules(Team $team)
+    {
+        return Module::whereHas('installedTeams', function ($query) use ($team) {
+            $query->where('team_id', $team->id);
+        })->get();
+    }
+
+    /**
+     * Get all available modules for a team (not installed).
+     *
+     * @param Team $team
+     * @return \Illuminate\Database\Eloquent\Collection
+     */
+    public function getAvailableModules(Team $team)
+    {
+        return Module::enabled()
+            ->whereDoesntHave('installedTeams', function ($query) use ($team) {
+                $query->where('team_id', $team->id);
+            })
+            ->get();
+    }
+
+    /**
+     * Get modules that depend on the given module for a team.
+     *
+     * @param Module $module
+     * @param Team $team
+     * @return array
+     */
+    protected function getDependentModules(Module $module, Team $team): array
+    {
+        $installedModules = $this->getInstalledModules($team);
+        $dependents = [];
+
+        foreach ($installedModules as $installed) {
+            foreach ($installed->dependencies as $dependency) {
+                if ($dependency->required_module_slug === $module->slug) {
+                    $dependents[] = $installed->name;
+                    break;
+                }
             }
         }
 
-        return true;
+        return $dependents;
     }
 
     /**
-     * Check if other modules depend on this one
+     * Run module-specific installation logic.
+     *
+     * @param Module $module
+     * @return void
      */
-    protected function hasDependentModules(string $slug): bool
+    protected function runModuleInstallation(Module $module): void
     {
-        $installedModules = $this->getInstalledModules();
-        
-        foreach ($installedModules as $module) {
-            $dependencies = $module['dependencies'] ?? [];
-            if (in_array($slug, $dependencies)) {
-                return true;
-            }
+        // Check if module has specific installation command
+        $commandClass = "App\\Console\\Commands\\Modules\\Install" . str_replace(' ', '', $module->name) . "Command";
+
+        if (class_exists($commandClass)) {
+            Artisan::call($commandClass);
         }
 
-        return false;
+        // Run module migrations if they exist
+        $migrationPath = base_path("database/migrations/modules/{$module->slug}");
+        if (file_exists($migrationPath)) {
+            Artisan::call('migrate', ['--path' => $migrationPath]);
+        }
+
+        // Publish module assets if they exist
+        $tag = "module-{$module->slug}";
+        Artisan::call('vendor:publish', ['--tag' => $tag, '--force' => true]);
     }
 
     /**
-     * Run module migrations
+     * Run module-specific uninstallation logic.
+     *
+     * @param Module $module
+     * @return void
      */
-    protected function runModuleMigrations(array $module): void
+    protected function runModuleUninstallation(Module $module): void
     {
-        $migrationsPath = $module['path'] . '/database/migrations';
-        
-        if (File::exists($migrationsPath)) {
-            Artisan::call('migrate', [
-                '--path' => "modules/{$module['slug']}/database/migrations",
-                '--force' => true
-            ]);
+        // Check if module has specific uninstallation command
+        $commandClass = "App\\Console\\Commands\\Modules\\Uninstall" . str_replace(' ', '', $module->name) . "Command";
+
+        if (class_exists($commandClass)) {
+            Artisan::call($commandClass);
         }
+
+        // Note: We don't automatically rollback migrations to preserve data integrity
+        // Admins should manually handle data migration/cleanup if needed
     }
 
     /**
-     * Rollback module migrations
+     * Enable a module globally.
+     *
+     * @param Module $module
+     * @return array
      */
-    protected function rollbackModuleMigrations(array $module): void
-    {
-        $migrationsPath = $module['path'] . '/database/migrations';
-        
-        if (File::exists($migrationsPath)) {
-            // This would need more sophisticated migration tracking
-            // For now, we'll implement a basic rollback
-            Artisan::call('migrate:rollback', [
-                '--path' => "modules/{$module['slug']}/database/migrations",
-                '--force' => true
-            ]);
-        }
-    }
-
-    /**
-     * Register module permissions
-     */
-    protected function registerModulePermissions(array $module): void
-    {
-        if (!isset($module['permissions']) || empty($module['permissions'])) {
-            return;
-        }
-
-        foreach ($module['permissions'] as $permission) {
-            \Spatie\Permission\Models\Permission::firstOrCreate([
-                'name' => $permission,
-                'guard_name' => 'web'
-            ]);
-        }
-    }
-
-    /**
-     * Remove module permissions
-     */
-    protected function removeModulePermissions(array $module): void
-    {
-        if (!isset($module['permissions']) || empty($module['permissions'])) {
-            return;
-        }
-
-        foreach ($module['permissions'] as $permission) {
-            \Spatie\Permission\Models\Permission::where('name', $permission)->delete();
-        }
-    }
-
-    /**
-     * Copy module assets
-     */
-    protected function copyModuleAssets(array $module): void
-    {
-        $assetsPath = $module['path'] . '/resources/assets';
-        $publicPath = public_path("modules/{$module['slug']}");
-        
-        if (File::exists($assetsPath)) {
-            File::copyDirectory($assetsPath, $publicPath);
-        }
-    }
-
-    /**
-     * Remove module assets
-     */
-    protected function removeModuleAssets(array $module): void
-    {
-        $publicPath = public_path("modules/{$module['slug']}");
-        
-        if (File::exists($publicPath)) {
-            File::deleteDirectory($publicPath);
-        }
-    }
-
-    /**
-     * Mark module as installed
-     */
-    protected function markModuleInstalled(string $slug): void
-    {
-        $flagPath = database_path("modules/{$slug}_installed.flag");
-        File::ensureDirectoryExists(dirname($flagPath));
-        File::put($flagPath, now()->toISOString());
-    }
-
-    /**
-     * Mark module as uninstalled
-     */
-    protected function markModuleUninstalled(string $slug): void
-    {
-        $flagPath = database_path("modules/{$slug}_installed.flag");
-        if (File::exists($flagPath)) {
-            File::delete($flagPath);
-        }
-    }
-
-    /**
-     * Rollback module installation
-     */
-    protected function rollbackModuleInstallation(string $slug): void
+    public function enable(Module $module): array
     {
         try {
-            $this->markModuleUninstalled($slug);
-            $this->clearModuleCache();
+            if ($module->enabled) {
+                return [
+                    'success' => false,
+                    'message' => 'Module is already enabled.',
+                ];
+            }
+
+            $module->update(['enabled' => true]);
+
+            activity()
+                ->performedOn($module)
+                ->causedBy(auth()->id())
+                ->log('Module enabled globally');
+
+            return [
+                'success' => true,
+                'message' => "Module '{$module->name}' enabled successfully.",
+            ];
         } catch (\Exception $e) {
-            // Log error but don't throw to avoid masking original error
-            \Log::error("Failed to rollback module installation for {$slug}: " . $e->getMessage());
+            return [
+                'success' => false,
+                'message' => 'Failed to enable module: ' . $e->getMessage(),
+            ];
         }
     }
 
     /**
-     * Clear module cache
+     * Disable a module globally.
+     *
+     * @param Module $module
+     * @return array
      */
-    public function clearModuleCache(): void
+    public function disable(Module $module): array
     {
-        if ($this->cacheEnabled) {
-            Cache::forget('modules.all');
-            Cache::forget('modules.installed');
+        try {
+            if ($module->is_core) {
+                return [
+                    'success' => false,
+                    'message' => 'Core modules cannot be disabled.',
+                ];
+            }
+
+            if (!$module->enabled) {
+                return [
+                    'success' => false,
+                    'message' => 'Module is already disabled.',
+                ];
+            }
+
+            $module->update(['enabled' => false]);
+
+            activity()
+                ->performedOn($module)
+                ->causedBy(auth()->id())
+                ->log('Module disabled globally');
+
+            return [
+                'success' => true,
+                'message' => "Module '{$module->name}' disabled successfully.",
+            ];
+        } catch (\Exception $e) {
+            return [
+                'success' => false,
+                'message' => 'Failed to disable module: ' . $e->getMessage(),
+            ];
         }
     }
 }

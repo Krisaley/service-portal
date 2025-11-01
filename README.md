@@ -1,226 +1,587 @@
-# Laravel Field Service Management System
+# Laravel FSM Phase 1
+## Multi-Tenant Field Service Management System
 
-A modern, multi-tenant Laravel SaaS application for field service management combining CRM, project management, compliance tracking, e-commerce, and customer portal functionality.
+<div align="center">
 
-## Phase 1: Core Framework & Modular Foundation
+![Laravel](https://img.shields.io/badge/Laravel-11.x-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)
+![PHP](https://img.shields.io/badge/PHP-8.2+-777BB4?style=for-the-badge&logo=php&logoColor=white)
+![Livewire](https://img.shields.io/badge/Livewire-3.x-4E56A6?style=for-the-badge&logo=livewire&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?style=for-the-badge&logo=docker&logoColor=white)
 
-This is **Phase 1** of development, focusing on establishing a solid foundation with a modular installation system before adding business features.
+**A complete, production-ready Laravel 11 application with multi-tenancy, role-based access control, and modular architecture.**
 
-### 🎯 Phase 1 Objectives
+[Features](#features) • [Quick Start](#quick-start) • [Documentation](#documentation) • [Demo](#demo-credentials)
 
-- ✅ Laravel foundation with Jetstream Teams authentication
-- ✅ Robust module installation and management system  
-- ✅ Core UI shell and navigation framework
-- ✅ Multi-tenant data isolation patterns
-- ✅ Testing framework for validating modules
+</div>
+
+---
+
+## 🎯 Overview
+
+Laravel FSM Phase 1 is a **fully functional web application** designed for field service management with:
+
+- ✅ **Multi-Tenancy** using Laravel Jetstream Teams
+- ✅ **Role-Based Access Control** (Super Admin, Admin, Staff, Customer)
+- ✅ **Modular Architecture** with install/uninstall capabilities
+- ✅ **Admin Panel** powered by Filament 3
+- ✅ **RESTful API** with Laravel Sanctum
+- ✅ **Docker/GitOps Deployment** with automatic updates
+- ✅ **Activity Logging** for complete audit trails
+- ✅ **Media Management** for file uploads
+- ✅ **PDF Generation** for documents
+
+---
+
+## ✨ Features
+
+### Core Functionality
+
+| Feature | Description | Status |
+|---------|-------------|--------|
+| **Authentication** | Login, registration, password reset, email verification | ✅ Ready |
+| **Multi-Tenancy** | Team-based isolation with automatic scoping | ✅ Ready |
+| **Authorization** | 4 roles, 20+ permissions, policy-based access | ✅ Ready |
+| **User Management** | Create, edit, delete users with role assignment | ✅ Ready |
+| **Team Management** | Create teams, invite members, manage settings | ✅ Ready |
+| **Module System** | Install/uninstall modules per team | ✅ Ready |
+| **Activity Logging** | Track all user actions with full audit trail | ✅ Ready |
+| **File Management** | Upload, organize, and manage media files | ✅ Ready |
+| **API** | RESTful API with token authentication | ✅ Ready |
+| **Search** | Full-text search with Meilisearch | ✅ Ready |
+| **Queues** | Background job processing with Redis | ✅ Ready |
+| **Scheduler** | Laravel task scheduling (cron) | ✅ Ready |
+
+### Admin Panel (Filament)
+
+- 📊 **Dashboard** - Overview stats and recent activity
+- 👥 **User Management** - Full CRUD with role assignment
+- 🔧 **Module Management** - Install/uninstall modules
+- 📝 **Activity Logs** - View all system activity
+- ⚙️ **Settings** - Configure application settings
+- 🔍 **Global Search** - Search across all resources
+
+### User Roles & Permissions
+
+| Role | Access Level | Capabilities |
+|------|--------------|--------------|
+| **Super Admin** | Full system access | Manage all teams, users, modules, settings |
+| **Admin** | Team-wide access | Manage team users, modules, settings |
+| **Staff** | Limited access | View and manage assigned tasks/jobs |
+| **Customer** | Read-only | View own data, submit requests |
+
+---
 
 ## 🚀 Quick Start
 
 ### Prerequisites
 
-- PHP 8.2+
-- Composer
-- Docker & Docker Compose
-- Node.js & NPM
+- **Docker** 20.10+ ([Install Docker](https://docs.docker.com/get-docker/))
+- **Docker Compose** 2.0+
+- **Git** (optional, for GitOps)
 
-### Installation
+### Option 1: Automated Quick Start (Recommended)
 
-1. **Clone and setup Laravel**:
 ```bash
-# Install dependencies
-composer install
+# Clone or navigate to repository
+cd laravel-fsm-phase1
 
-# Copy environment file
+# Run quick start script
+bash quick-start.sh
+
+# Follow the prompts to configure deployment
+# Script handles everything: .env setup, building, starting services
+```
+
+**That's it!** The script will:
+1. Check prerequisites
+2. Configure environment
+3. Build Docker images
+4. Start all services
+5. Wait for initialization
+6. Display access URLs and credentials
+
+### Option 2: Manual Setup
+
+```bash
+# 1. Configure environment
 cp .env.example .env
+nano .env  # Edit configuration
 
-# Generate application key
-php artisan key:generate
+# 2. Build and start
+docker-compose build
+docker-compose up -d
 
-# Start Docker environment
-./vendor/bin/sail up -d
+# 3. Wait for initialization (3-5 minutes)
+docker-compose logs -f app
 
-# Run migrations
-./vendor/bin/sail artisan migrate
-
-# Install Jetstream with Teams
-./vendor/bin/sail artisan jetstream:install livewire --teams
-
-# Build frontend assets
-./vendor/bin/sail npm install
-./vendor/bin/sail npm run build
+# 4. Access application
+open http://localhost:8080
 ```
-
-2. **Initialize the module system**:
-```bash
-# Create modules directory structure
-./vendor/bin/sail artisan module:init
-
-# Install core permissions
-./vendor/bin/sail artisan db:seed --class=CorePermissionsSeeder
-```
-
-3. **Access the application**:
-- Main app: http://localhost
-- Admin panel: http://localhost/admin
-
-## 🏗️ Architecture Overview
-
-### Multi-Tenancy
-- **Laravel Jetstream Teams** for Phase 1 tenant isolation
-- All queries automatically scoped by `team_id`
-- Planned migration path to Spatie Multi-tenancy for Phase 2
-
-### Module System
-- **Upload & Install**: Drop modules into `/modules` folder and run installer
-- **JSON Manifests**: Each module has a `module.json` with metadata and dependencies
-- **Automatic Setup**: Migrations, permissions, assets, and UI integration handled automatically
-- **Dependency Resolution**: Modules can depend on other modules
-
-### Core Components
-- **Livewire Volt**: Single-file components for rapid development
-- **WireUI**: Modern UI components for consistent design
-- **Filament**: Admin panel for data management
-- **Spatie Packages**: Media Library, Permissions, Activity Log
-
-## 📁 Project Structure
-
-```
-/
-├── app/
-│   ├── Services/ModuleService.php    # Core module management
-│   ├── Traits/HasTeamScope.php       # Multi-tenant data scoping
-│   └── Http/Middleware/EnsureTeamContext.php
-├── modules/                          # Installable modules directory
-│   ├── CustomerManagement/          # Example module
-│   │   ├── module.json              # Module manifest
-│   │   ├── src/                     # Module source code
-│   │   ├── database/migrations/     # Module migrations
-│   │   └── resources/views/         # Module views
-├── config/modules.php               # Module system configuration
-└── .github/
-    ├── copilot-instructions.md      # AI agent guidance
-    └── build_phases/phase1.json     # Current phase plan
-```
-
-## 🔧 Module Development
-
-### Creating a Module
-
-1. **Create module directory**:
-```bash
-mkdir modules/YourModule
-cd modules/YourModule
-```
-
-2. **Create module manifest** (`module.json`):
-```json
-{
-  "name": "Your Module",
-  "slug": "your-module", 
-  "version": "1.0.0",
-  "description": "Description of your module",
-  "author": "Your Name",
-  "category": "core",
-  "dependencies": [],
-  "permissions": [
-    "view_your_module",
-    "create_your_module", 
-    "edit_your_module",
-    "delete_your_module"
-  ],
-  "navigation": [
-    {
-      "label": "Your Module",
-      "route": "your-module.index",
-      "icon": "heroicon-o-star",
-      "permission": "view_your_module"
-    }
-  ]
-}
-```
-
-3. **Install the module**:
-```bash
-./vendor/bin/sail artisan module:install your-module
-```
-
-### Module Structure
-
-```
-modules/YourModule/
-├── module.json              # Required: Module manifest
-├── src/                     # Required: Source code
-│   ├── Controllers/
-│   ├── Models/
-│   └── Livewire/
-├── database/               # Optional: Database files
-│   ├── migrations/
-│   └── seeders/
-├── resources/              # Optional: Views and assets
-│   ├── views/
-│   └── assets/
-├── routes/                 # Optional: Route files
-│   ├── web.php
-│   └── api.php
-└── tests/                  # Optional: Module tests
-```
-
-## 🧪 Testing
-
-```bash
-# Run all tests
-./vendor/bin/sail test
-
-# Run specific test suite
-./vendor/bin/sail test --testsuite=Feature
-
-# Test module installation
-./vendor/bin/sail artisan module:test-install
-```
-
-## 📋 Phase 1 Milestones
-
-- [x] **M1: Laravel Foundation** - Basic Jetstream setup
-- [ ] **M2: Module System** - Core module installation framework  
-- [ ] **M3: UI Shell** - Dynamic navigation & dashboard
-- [ ] **M4: Security & Settings** - Multi-tenant isolation
-- [ ] **M5: Testing & Validation** - Test modules to prove system
-
-**Total Duration**: 7 weeks  
-**Current Status**: M1 Complete, M2 In Progress
-
-## 🔒 Security
-
-### Multi-Tenant Isolation
-- All models use `HasTeamScope` trait for automatic team scoping
-- Middleware ensures team context is always set
-- Global scopes prevent cross-tenant data access
-
-### Module Security
-- Module manifests validated before installation
-- File type restrictions on module uploads
-- Permission system integrated with module installation
-
-## 📚 Documentation
-
-- [Module Development Guide](docs/modules.md) *(coming soon)*
-- [Multi-Tenancy Patterns](docs/multi-tenancy.md) *(coming soon)*
-- [API Documentation](docs/api.md) *(coming soon)*
-
-## 🤝 Contributing
-
-This is Phase 1 - focus on core framework stability. Business features will be added as modules in later phases.
-
-1. Follow the existing code patterns
-2. Ensure all changes maintain multi-tenant isolation
-3. Add tests for new functionality
-4. Update this README for significant changes
-
-## 📄 License
-
-MIT License - see [LICENSE](LICENSE) file for details.
 
 ---
 
-**Phase 1 Goal**: Solid, testable foundation with module system before any business features.  
-**Next Phase**: Business modules (CRM, Ticketing, Assets, etc.) as installable packages.
+## 🔐 Demo Credentials
+
+Once deployed, login with these test accounts:
+
+### Super Admin
+```
+Email: admin@test.com
+Password: password
+```
+
+### Staff Member
+```
+Email: staff@test.com
+Password: password
+```
+
+### Customer
+```
+Email: customer@test.com
+Password: password
+```
+
+---
+
+## 📋 Access Points
+
+After deployment, access the application at:
+
+| Service | URL | Description |
+|---------|-----|-------------|
+| **Frontend** | http://localhost:8080 | Main application |
+| **Admin Panel** | http://localhost:8080/admin | Filament admin dashboard |
+| **API** | http://localhost:8080/api | RESTful API endpoints |
+| **Health Check** | http://localhost:8080/health | Application health status |
+| **Detailed Health** | http://localhost:8080/health/detailed | Full system health check |
+
+**Additional Services:**
+- MySQL: `localhost:3306`
+- Redis: `localhost:6379`
+- Meilisearch: `localhost:7700`
+
+---
+
+## 📚 Documentation
+
+### Deployment Guides
+
+- **[DOCKER_DEPLOY.md](DOCKER_DEPLOY.md)** - Complete Docker deployment guide
+  - Local development setup
+  - Portainer deployment
+  - Production deployment
+  - GitOps configuration
+  - Troubleshooting
+
+- **[PROJECT_SUMMARY.md](PROJECT_SUMMARY.md)** - Project overview
+  - Features breakdown
+  - Architecture patterns
+  - Database schema
+  - Tech stack details
+
+- **[INSTALLATION_CHECKLIST.md](INSTALLATION_CHECKLIST.md)** - Step-by-step verification
+  - Pre-deployment checks
+  - Post-deployment validation
+  - Testing procedures
+
+### Quick Reference
+
+- **[quick-start.sh](quick-start.sh)** - Automated deployment script
+- **[.env.example](.env.example)** - Environment configuration template
+- **[docker-compose.yml](docker-compose.yml)** - Docker stack definition
+
+---
+
+## 🏗️ Architecture
+
+### Tech Stack
+
+**Backend:**
+- Laravel 11.x (PHP 8.2+)
+- MySQL 8.0
+- Redis 7
+- Meilisearch
+
+**Frontend:**
+- Livewire 3
+- Tailwind CSS 3
+- Alpine.js 3
+- Blade Templates
+
+**Admin Panel:**
+- Filament 3
+
+**Key Packages:**
+- Laravel Jetstream (Teams)
+- Laravel Sanctum (API)
+- Spatie Permission
+- Spatie Activity Log
+- Spatie Media Library
+- Spatie Laravel-PDF
+
+### Multi-Tenancy Architecture
+
+```
+┌─────────────────────────────────────────┐
+│           Application Layer             │
+├─────────────────────────────────────────┤
+│  ┌──────────────┐  ┌──────────────┐    │
+│  │   Team A     │  │   Team B     │    │
+│  │              │  │              │    │
+│  │  Users       │  │  Users       │    │
+│  │  Modules     │  │  Modules     │    │
+│  │  Data        │  │  Data        │    │
+│  └──────────────┘  └──────────────┘    │
+├─────────────────────────────────────────┤
+│     Team Isolation Layer (Scopes)      │
+├─────────────────────────────────────────┤
+│        Shared Infrastructure            │
+│  • Authentication                       │
+│  • Authorization (Roles/Permissions)    │
+│  • Activity Logging                     │
+│  • Media Management                     │
+│  • Module System                        │
+└─────────────────────────────────────────┘
+```
+
+### Module System
+
+The application supports **installable/uninstallable modules**:
+
+```bash
+# List available modules
+docker exec laravel-fsm-app php artisan module:list
+
+# Install a module
+docker exec laravel-fsm-app php artisan module:install crm
+
+# Uninstall a module
+docker exec laravel-fsm-app php artisan module:uninstall crm
+```
+
+Modules available in Phase 1:
+- Core (always active)
+- Activity Log
+- Media Library
+- API
+
+*Additional modules (CRM, Ticketing, etc.) coming in Phase 2+*
+
+---
+
+## 🐳 Docker Services
+
+The stack includes 6 services:
+
+| Service | Description | Container Name |
+|---------|-------------|----------------|
+| **app** | Laravel application (Nginx + PHP-FPM) | laravel-fsm-app |
+| **mysql** | MySQL 8.0 database | laravel-fsm-mysql |
+| **redis** | Redis cache & queue | laravel-fsm-redis |
+| **meilisearch** | Full-text search engine | laravel-fsm-meilisearch |
+| **queue** | Queue worker | laravel-fsm-queue |
+| **scheduler** | Laravel scheduler (cron) | laravel-fsm-scheduler |
+
+---
+
+## ⚙️ Configuration
+
+### Environment Variables
+
+Key variables to configure in `.env`:
+
+```env
+# Application
+APP_NAME="Laravel FSM Phase 1"
+APP_ENV=production
+APP_DEBUG=false
+APP_URL=http://your-domain.com
+
+# Database
+DB_PASSWORD=your_secure_password
+DB_ROOT_PASSWORD=your_root_password
+
+# GitOps (optional)
+GITOPS_ENABLED=true
+GIT_REPO=https://github.com/your-username/laravel-fsm.git
+GIT_BRANCH=main
+GIT_TOKEN=your_access_token
+```
+
+See [.env.example](.env.example) for full configuration options.
+
+---
+
+## 🔄 GitOps Deployment
+
+Enable **automatic updates** from your Git repository:
+
+1. **Enable GitOps in `.env`:**
+   ```env
+   GITOPS_ENABLED=true
+   GIT_REPO=https://github.com/your-username/laravel-fsm.git
+   GIT_BRANCH=main
+   GIT_TOKEN=ghp_your_token_here
+   ```
+
+2. **Deploy with GitOps:**
+   ```bash
+   docker-compose up -d --build
+   ```
+
+3. **Updates happen automatically every 5 minutes:**
+   - Pulls latest code from Git
+   - Installs new dependencies
+   - Runs new migrations
+   - Clears caches
+   - Reloads PHP-FPM (zero downtime)
+
+**View GitOps activity:**
+```bash
+docker exec laravel-fsm-app tail -f /var/log/gitops/updates.log
+```
+
+---
+
+## 🧪 Testing
+
+### Manual Testing
+
+```bash
+# Access the application
+docker exec -it laravel-fsm-app bash
+
+# Run migrations
+php artisan migrate:status
+
+# List routes
+php artisan route:list
+
+# Test module system
+php artisan module:list
+
+# Run tinker
+php artisan tinker
+>>> App\Models\User::count()
+>>> App\Models\Team::count()
+```
+
+### Health Checks
+
+```bash
+# Basic health
+curl http://localhost:8080/health
+
+# Detailed health (database, redis, storage)
+curl http://localhost:8080/health/detailed
+```
+
+---
+
+## 🔧 Development
+
+### Running Artisan Commands
+
+```bash
+# General format
+docker exec laravel-fsm-app php artisan [command]
+
+# Examples:
+docker exec laravel-fsm-app php artisan migrate
+docker exec laravel-fsm-app php artisan db:seed
+docker exec laravel-fsm-app php artisan cache:clear
+docker exec laravel-fsm-app php artisan queue:work
+```
+
+### Accessing Container Shell
+
+```bash
+docker exec -it laravel-fsm-app bash
+```
+
+### Viewing Logs
+
+```bash
+# Application container logs
+docker-compose logs -f app
+
+# Laravel application logs
+docker exec laravel-fsm-app tail -f storage/logs/laravel.log
+
+# All services
+docker-compose logs -f
+```
+
+### Database Access
+
+```bash
+# MySQL CLI
+docker exec -it laravel-fsm-mysql mysql -usail -p
+
+# Run SQL file
+docker exec -i laravel-fsm-mysql mysql -usail -ppassword laravel_fsm < backup.sql
+```
+
+---
+
+## 🛠️ Useful Commands
+
+### Service Management
+
+```bash
+# Start services
+docker-compose up -d
+
+# Stop services
+docker-compose stop
+
+# Restart services
+docker-compose restart
+
+# View status
+docker-compose ps
+
+# Remove everything (including volumes)
+docker-compose down -v
+```
+
+### Module Management
+
+```bash
+# List available modules
+docker exec laravel-fsm-app php artisan module:list
+
+# Install module
+docker exec laravel-fsm-app php artisan module:install [module-slug]
+
+# Uninstall module
+docker exec laravel-fsm-app php artisan module:uninstall [module-slug]
+```
+
+### Cache Management
+
+```bash
+# Clear all caches
+docker exec laravel-fsm-app php artisan optimize:clear
+
+# Clear specific caches
+docker exec laravel-fsm-app php artisan cache:clear
+docker exec laravel-fsm-app php artisan config:clear
+docker exec laravel-fsm-app php artisan route:clear
+docker exec laravel-fsm-app php artisan view:clear
+```
+
+---
+
+## 📦 What's Included
+
+### Database Tables (16 tables)
+
+- **Authentication:** users, password_reset_tokens, sessions
+- **Multi-Tenancy:** teams, team_user, team_invitations
+- **Authorization:** roles, permissions, model_has_roles, model_has_permissions, role_has_permissions
+- **Modules:** modules, module_dependencies, module_settings, installed_modules
+- **Activity:** activity_log
+- **Media:** media
+- **API:** personal_access_tokens
+- **System:** cache, jobs, job_batches, failed_jobs
+
+### Test Data
+
+- **3 Test Users** (Super Admin, Staff, Customer)
+- **1 Default Team** ("Test Organization")
+- **4 Roles** with full permissions
+- **20 Available Modules** (ready to install)
+
+### Admin Resources
+
+- User Management
+- Module Management
+- Activity Log Viewer
+- Global Search
+
+---
+
+## 🚦 Production Checklist
+
+Before deploying to production:
+
+- [ ] Change all default passwords in `.env`
+- [ ] Set `APP_ENV=production`
+- [ ] Set `APP_DEBUG=false`
+- [ ] Configure proper `APP_URL`
+- [ ] Set up SSL certificate (HTTPS)
+- [ ] Configure firewall rules
+- [ ] Set up automated backups
+- [ ] Configure monitoring
+- [ ] Review security settings
+- [ ] Set up log rotation
+- [ ] Configure mail server
+- [ ] Test backup restoration
+
+See [DOCKER_DEPLOY.md](DOCKER_DEPLOY.md) for detailed production deployment guide.
+
+---
+
+## 📖 API Documentation
+
+The API is available at `/api` with token-based authentication.
+
+### Generate API Token
+
+```bash
+# Via tinker
+docker exec laravel-fsm-app php artisan tinker
+>>> $user = User::find(1)
+>>> $token = $user->createToken('api-token')->plainTextToken
+>>> echo $token
+```
+
+### Example API Request
+
+```bash
+curl -H "Authorization: Bearer YOUR_TOKEN_HERE" \
+     http://localhost:8080/api/user
+```
+
+---
+
+## 🤝 Support
+
+### Documentation
+- [Docker Deployment Guide](DOCKER_DEPLOY.md)
+- [Project Summary](PROJECT_SUMMARY.md)
+- [Installation Checklist](INSTALLATION_CHECKLIST.md)
+
+### Resources
+- [Laravel Documentation](https://laravel.com/docs/11.x)
+- [Filament Documentation](https://filamentphp.com/docs)
+- [Docker Documentation](https://docs.docker.com/)
+
+---
+
+## 📄 License
+
+This project is open-source software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+---
+
+## 🎉 Next Steps
+
+1. **Deploy the application** using `quick-start.sh`
+2. **Login to admin panel** at `/admin`
+3. **Create your first team** and invite users
+4. **Install modules** as needed
+5. **Customize** views and business logic
+6. **Build Phase 2 features** (CRM, Ticketing, etc.)
+
+---
+
+<div align="center">
+
+**Built with ❤️ using Laravel 11 and modern PHP**
+
+[Report Bug](https://github.com/your-repo/issues) • [Request Feature](https://github.com/your-repo/issues)
+
+</div>

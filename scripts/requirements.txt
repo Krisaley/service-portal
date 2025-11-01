@@ -1,0 +1,3 @@
+# Python dependencies for Ollama integration
+
+requests>=2.31.0

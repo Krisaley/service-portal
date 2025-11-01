@@ -4,40 +4,35 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\Response;
 
+/**
+ * EnsureTeamContext Middleware
+ *
+ * Ensures the authenticated user has a team context set.
+ */
 class EnsureTeamContext
 {
     /**
      * Handle an incoming request.
      *
-     * Ensures all database queries are scoped to the current user's team
-     * for multi-tenant data isolation.
+     * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (Auth::check()) {
-            $user = Auth::user();
-            
-            // Ensure user has a current team
-            if (!$user->currentTeam) {
-                // If user has teams, set the first one as current
-                if ($user->teams->count() > 0) {
-                    $user->current_team_id = $user->teams->first()->id;
-                    $user->save();
-                } else {
-                    // User has no teams - this shouldn't happen in normal flow
-                    // but we'll handle it gracefully
-                    abort(403, 'No team access available');
-                }
-            }
+        if (!$request->user()) {
+            return $next($request);
+        }
 
-            // Share the current team ID globally for query scoping
-            app()->instance('current_team_id', $user->currentTeam->id);
-            
-            // Set team context in session for frontend use
-            session(['current_team_id' => $user->currentTeam->id]);
+        // If user doesn't have a current team, set it to their first team
+        if (!$request->user()->currentTeam && $request->user()->allTeams()->count() > 0) {
+            $request->user()->switchTeam($request->user()->allTeams()->first());
+        }
+
+        // If user still doesn't have a team, redirect to team creation
+        if (!$request->user()->currentTeam) {
+            return redirect()->route('teams.create')
+                ->with('error', 'You must create or join a team to continue.');
         }
 
         return $next($request);

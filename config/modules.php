@@ -3,155 +3,142 @@
 return [
     /*
     |--------------------------------------------------------------------------
-    | Modules Configuration
+    | Module System Configuration
     |--------------------------------------------------------------------------
     |
-    | Configuration for the modular system that allows dynamic installation
-    | and management of features as separate modules.
+    | This file contains configuration options for the modular system.
     |
     */
 
-    /*
-    |--------------------------------------------------------------------------
-    | Modules Path
-    |--------------------------------------------------------------------------
-    |
-    | This is the path where modules will be stored relative to the base path.
-    | Modules should follow the standard structure with manifest files.
-    |
-    */
-    'path' => env('MODULES_PATH', 'modules'),
-
-    /*
-    |--------------------------------------------------------------------------
-    | Cache Configuration
-    |--------------------------------------------------------------------------
-    |
-    | Enable caching of module discovery and metadata for better performance.
-    | Disable during development for immediate changes.
-    |
-    */
-    'cache_enabled' => env('MODULES_CACHE_ENABLED', true),
-    'cache_key' => 'modules',
-    'cache_lifetime' => 24 * 60, // 24 hours in minutes
-
-    /*
-    |--------------------------------------------------------------------------
-    | Auto Discovery
-    |--------------------------------------------------------------------------
-    |
-    | Automatically discover and register modules on application boot.
-    | Disable this in production for better performance.
-    |
-    */
-    'auto_discovery' => env('MODULES_AUTO_DISCOVERY', true),
-
-    /*
-    |--------------------------------------------------------------------------
-    | Module Structure
-    |--------------------------------------------------------------------------
-    |
-    | Define the expected structure for modules including required
-    | and optional directories and files.
-    |
-    */
-    'structure' => [
-        'manifest_file' => 'module.json',
-        'required_directories' => [
-            'src',
-        ],
-        'optional_directories' => [
-            'database',
-            'database/migrations',
-            'database/seeders',
-            'resources',
-            'resources/views',
-            'resources/assets',
-            'routes',
-            'tests',
-            'config',
-        ],
-        'autoload_paths' => [
-            'src',
-        ],
-    ],
-
-    /*
-    |--------------------------------------------------------------------------
-    | Installation Settings
-    |--------------------------------------------------------------------------
-    |
-    | Settings related to module installation and management.
-    |
-    */
-    'installation' => [
-        'flags_directory' => 'database/modules',
-        'backup_on_install' => true,
-        'rollback_on_failure' => true,
-        'validate_dependencies' => true,
-    ],
-
-    /*
-    |--------------------------------------------------------------------------
-    | Core Modules
-    |--------------------------------------------------------------------------
-    |
-    | Modules that are considered core and cannot be uninstalled.
-    | These are always available and loaded.
-    |
-    */
+    /**
+     * Core modules that cannot be disabled or uninstalled.
+     */
     'core_modules' => [
-        // Core modules will be defined here
+        'auth',
+        'dashboard',
+        'teams',
+        'settings',
+        'activity-log',
     ],
 
-    /*
-    |--------------------------------------------------------------------------
-    | Module Categories
-    |--------------------------------------------------------------------------
-    |
-    | Define categories for organizing modules in the admin interface.
-    |
-    */
-    'categories' => [
-        'core' => 'Core System',
-        'crm' => 'Customer Management',
-        'service' => 'Service Management', 
-        'commerce' => 'E-commerce',
-        'communication' => 'Communication',
-        'reporting' => 'Reports & Analytics',
-        'integration' => 'Integrations',
-        'workflow' => 'Workflow & Automation',
-        'compliance' => 'Compliance & Security',
-        'other' => 'Other',
+    /**
+     * Module paths and directories.
+     */
+    'paths' => [
+        'migrations' => database_path('migrations/modules'),
+        'seeders' => database_path('seeders/modules'),
+        'assets' => public_path('modules'),
     ],
 
-    /*
-    |--------------------------------------------------------------------------
-    | Security Settings
-    |--------------------------------------------------------------------------
-    |
-    | Security-related configuration for module installation and management.
-    |
-    */
-    'security' => [
-        'allowed_file_types' => ['php', 'json', 'blade.php', 'css', 'js', 'vue'],
-        'forbidden_functions' => ['exec', 'shell_exec', 'system', 'passthru'],
-        'validate_signatures' => false, // Enable in production
-        'sandbox_installation' => false, // Enable in production
+    /**
+     * Module installation settings.
+     */
+    'installation' => [
+        // Run migrations automatically when installing a module
+        'auto_migrate' => true,
+
+        // Run seeders automatically when installing a module
+        'auto_seed' => false,
+
+        // Publish assets automatically when installing a module
+        'auto_publish_assets' => true,
+
+        // Check dependencies before installation
+        'check_dependencies' => true,
     ],
 
-    /*
-    |--------------------------------------------------------------------------
-    | UI Integration
-    |--------------------------------------------------------------------------
-    |
-    | Settings for how modules integrate with the UI.
-    |
-    */
-    'ui' => [
-        'menu_integration' => true,
-        'dashboard_widgets' => true,
-        'custom_routes' => true,
-        'livewire_components' => true,
+    /**
+     * Module caching settings.
+     */
+    'cache' => [
+        // Enable module caching
+        'enabled' => env('MODULE_CACHE_ENABLED', true),
+
+        // Cache key prefix
+        'prefix' => 'modules',
+
+        // Cache TTL in seconds
+        'ttl' => 3600,
+    ],
+
+    /**
+     * Available modules with their metadata.
+     */
+    'available' => [
+        'crm' => [
+            'name' => 'CRM',
+            'description' => 'Customer Relationship Management',
+            'icon' => 'heroicon-o-users',
+        ],
+        'products' => [
+            'name' => 'Products',
+            'description' => 'Product Catalog Management',
+            'icon' => 'heroicon-o-cube',
+        ],
+        'quotes' => [
+            'name' => 'Quotes',
+            'description' => 'Quote Generation System',
+            'icon' => 'heroicon-o-document-text',
+        ],
+        'assets' => [
+            'name' => 'Assets',
+            'description' => 'Asset Tracking & Maintenance',
+            'icon' => 'heroicon-o-server',
+        ],
+        'tickets' => [
+            'name' => 'Tickets',
+            'description' => 'Support Ticket Management',
+            'icon' => 'heroicon-o-ticket',
+        ],
+        'jobs' => [
+            'name' => 'Jobs',
+            'description' => 'Field Service Job Scheduling',
+            'icon' => 'heroicon-o-briefcase',
+        ],
+        'projects' => [
+            'name' => 'Projects',
+            'description' => 'Multi-Job Project Management',
+            'icon' => 'heroicon-o-folder',
+        ],
+        'timesheets' => [
+            'name' => 'Timesheets',
+            'description' => 'Time Tracking & Invoicing',
+            'icon' => 'heroicon-o-clock',
+        ],
+        'email-management' => [
+            'name' => 'Email Management',
+            'description' => 'Email-to-Ticket Automation',
+            'icon' => 'heroicon-o-envelope',
+        ],
+        'warranty' => [
+            'name' => 'Warranty Management',
+            'description' => 'Warranty Claim Tracking',
+            'icon' => 'heroicon-o-shield-check',
+        ],
+        'parts-tracking' => [
+            'name' => 'Parts Tracking',
+            'description' => 'Parts Inventory & Intelligence',
+            'icon' => 'heroicon-o-wrench',
+        ],
+        'purchase-orders' => [
+            'name' => 'Purchase Orders',
+            'description' => 'PO Creation & Approval',
+            'icon' => 'heroicon-o-shopping-cart',
+        ],
+        'sub-contractors' => [
+            'name' => 'Sub-contractors',
+            'description' => 'Sub-contractor Management',
+            'icon' => 'heroicon-o-user-group',
+        ],
+        'workflow-builder' => [
+            'name' => 'Workflow Builder',
+            'description' => 'Custom Workflow Configuration',
+            'icon' => 'heroicon-o-cog',
+        ],
+        'api' => [
+            'name' => 'API',
+            'description' => 'RESTful API & Webhooks',
+            'icon' => 'heroicon-o-code-bracket',
+        ],
     ],
 ];

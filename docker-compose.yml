@@ -1,95 +1,256 @@
+version: '3.8'
+
+# Laravel FSM Phase 1 - GitOps Dev Deployment
+# Designed for Portainer with automatic git updates every 5 minutes
+
 services:
-    laravel.test:
-        build:
-            context: .
-            #context: ./vendor/laravel/sail/runtimes/8.3
-            dockerfile: Dockerfile
-            args:
-                WWWGROUP: '${WWWGROUP}'
-        image: sail-8.3/app
-        extra_hosts:
-            - 'host.docker.internal:host-gateway'
-        ports:
-            - '${APP_PORT:-80}:80'
-            - '${VITE_PORT:-5173}:${VITE_PORT:-5173}'
-        environment:
-            WWWUSER: '${WWWUSER}'
-            LARAVEL_SAIL: 1
-            XDEBUG_MODE: '${SAIL_XDEBUG_MODE:-off}'
-            XDEBUG_CONFIG: '${SAIL_XDEBUG_CONFIG:-client_host=host.docker.internal}'
-            IGNITION_LOCAL_SITES_PATH: '${PWD}'
-        volumes:
-            - '.:/var/www/html'
-        networks:
-            - sail
-        depends_on:
-            - mysql
-            - redis
-    mysql:
-        image: 'mysql/mysql-server:8.0'
-        ports:
-            - '${FORWARD_DB_PORT:-3306}:3306'
-        environment:
-            MYSQL_ROOT_PASSWORD: '${DB_PASSWORD}'
-            MYSQL_ROOT_HOST: '%'
-            MYSQL_DATABASE: '${DB_DATABASE}'
-            MYSQL_USER: '${DB_USERNAME}'
-            MYSQL_PASSWORD: '${DB_PASSWORD}'
-            MYSQL_ALLOW_EMPTY_PASSWORD: 1
-        volumes:
-            - 'sail-mysql:/var/lib/mysql'
-            - './vendor/laravel/sail/database/mysql/create-testing-database.sh:/docker-entrypoint-initdb.d/10-create-testing-database.sh'
-        networks:
-            - sail
-        healthcheck:
-            test:
-                - CMD
-                - mysqladmin
-                - ping
-                - '-p${DB_PASSWORD}'
-            retries: 3
-            timeout: 5s
-    redis:
-        image: 'redis:alpine'
-        ports:
-            - '${FORWARD_REDIS_PORT:-6379}:6379'
-        volumes:
-            - 'sail-redis:/data'
-        networks:
-            - sail
-        healthcheck:
-            test:
-                - CMD
-                - redis-cli
-                - ping
-            retries: 3
-            timeout: 5s
-    meilisearch:
-        image: 'getmeili/meilisearch:latest'
-        ports:
-            - '${FORWARD_MEILISEARCH_PORT:-7700}:7700'
-        environment:
-            MEILI_NO_ANALYTICS: '${MEILISEARCH_NO_ANALYTICS:-false}'
-        volumes:
-            - 'sail-meilisearch:/meili_data'
-        networks:
-            - sail
-        healthcheck:
-            test:
-                - CMD
-                - wget
-                - '--no-verbose'
-                - '--spider'
-                - 'http://127.0.0.1:7700/health'
-            retries: 3
-            timeout: 5s
+  # Main Laravel Application with GitOps
+  app:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+      args:
+        # Git repository configuration
+        GIT_REPO: ${GIT_REPO:-https://github.com/your-username/laravel-fsm.git}
+        GIT_BRANCH: ${GIT_BRANCH:-phase1-core}
+        GIT_TOKEN: ${GIT_TOKEN:-}
+    image: laravel-fsm-gitops:latest
+    container_name: laravel-fsm-app
+    restart: unless-stopped
+    ports:
+      - "${APP_PORT:-8080}:80"
+      - "${VITE_PORT:-5173}:5173"
+    environment:
+      # Laravel Configuration
+      APP_NAME: ${APP_NAME:-Laravel FSM Phase 1}
+      APP_ENV: ${APP_ENV:-development}
+      APP_DEBUG: ${APP_DEBUG:-true}
+      APP_URL: ${APP_URL:-http://localhost:8080}
+
+      # Database
+      DB_CONNECTION: mysql
+      DB_HOST: mysql
+      DB_PORT: 3306
+      DB_DATABASE: ${DB_DATABASE:-laravel_fsm}
+      DB_USERNAME: ${DB_USERNAME:-sail}
+      DB_PASSWORD: ${DB_PASSWORD:-password}
+
+      # Redis
+      REDIS_HOST: redis
+      REDIS_PASSWORD: null
+      REDIS_PORT: 6379
+      CACHE_DRIVER: redis
+      SESSION_DRIVER: redis
+      QUEUE_CONNECTION: redis
+
+      # GitOps Configuration
+      GITOPS_ENABLED: ${GITOPS_ENABLED:-true}
+      GITOPS_INTERVAL: ${GITOPS_INTERVAL:-300}
+      GITOPS_BRANCH: ${GIT_BRANCH:-phase1-core}
+      GITOPS_AUTO_MIGRATE: ${GITOPS_AUTO_MIGRATE:-true}
+      GITOPS_AUTO_INSTALL: ${GITOPS_AUTO_INSTALL:-true}
+
+      # Jetstream
+      JETSTREAM_STACK: livewire
+
+      # Multi-tenancy
+      TENANT_ISOLATION_STRICT: true
+    volumes:
+      - app-storage:/var/www/html/storage
+      - app-bootstrap:/var/www/html/bootstrap/cache
+      - app-modules:/var/www/html/modules
+    networks:
+      - laravel-network
+    depends_on:
+      mysql:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    labels:
+      - "com.portainer.description=Laravel FSM Phase 1 with GitOps"
+      - "com.portainer.gitops.enabled=true"
+      - "com.portainer.gitops.interval=300"
+
+  # MySQL Database
+  mysql:
+    image: mysql:8.0
+    container_name: laravel-fsm-mysql
+    restart: unless-stopped
+    ports:
+      - "${DB_PORT:-3306}:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD:-rootpassword}
+      MYSQL_DATABASE: ${DB_DATABASE:-laravel_fsm}
+      MYSQL_USER: ${DB_USERNAME:-sail}
+      MYSQL_PASSWORD: ${DB_PASSWORD:-password}
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'no'
+    volumes:
+      - mysql-data:/var/lib/mysql
+      - ./docker/mysql-init:/docker-entrypoint-initdb.d
+    networks:
+      - laravel-network
+    command: --default-authentication-plugin=mysql_native_password
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-p${DB_PASSWORD}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    labels:
+      - "com.portainer.description=MySQL 8.0 Database"
+
+  # Redis Cache & Queue
+  redis:
+    image: redis:7-alpine
+    container_name: laravel-fsm-redis
+    restart: unless-stopped
+    ports:
+      - "${REDIS_PORT:-6379}:6379"
+    volumes:
+      - redis-data:/data
+    networks:
+      - laravel-network
+    command: redis-server --appendonly yes
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    labels:
+      - "com.portainer.description=Redis Cache & Queue"
+
+  # Meilisearch (Optional)
+  meilisearch:
+    image: getmeili/meilisearch:latest
+    container_name: laravel-fsm-meilisearch
+    restart: unless-stopped
+    ports:
+      - "${MEILISEARCH_PORT:-7700}:7700"
+    environment:
+      MEILI_ENV: ${MEILI_ENV:-development}
+      MEILI_NO_ANALYTICS: ${MEILI_NO_ANALYTICS:-true}
+      MEILI_MASTER_KEY: ${MEILI_MASTER_KEY:-masterKey}
+    volumes:
+      - meilisearch-data:/meili_data
+    networks:
+      - laravel-network
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--spider", "http://localhost:7700/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    labels:
+      - "com.portainer.description=Meilisearch Full-Text Search"
+
+  # Queue Worker
+  queue:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+      args:
+        GIT_REPO: ${GIT_REPO:-https://github.com/your-username/laravel-fsm.git}
+        GIT_BRANCH: ${GIT_BRANCH:-phase1-core}
+        GIT_TOKEN: ${GIT_TOKEN:-}
+    image: laravel-fsm-gitops:latest
+    container_name: laravel-fsm-queue
+    restart: unless-stopped
+    command: ["php", "artisan", "queue:work", "--tries=3"]
+    environment:
+      # Same env as app
+      DB_CONNECTION: mysql
+      DB_HOST: mysql
+      DB_PORT: 3306
+      DB_DATABASE: ${DB_DATABASE:-laravel_fsm}
+      DB_USERNAME: ${DB_USERNAME:-sail}
+      DB_PASSWORD: ${DB_PASSWORD:-password}
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+      QUEUE_CONNECTION: redis
+    volumes:
+      - app-storage:/var/www/html/storage
+    networks:
+      - laravel-network
+    depends_on:
+      mysql:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    labels:
+      - "com.portainer.description=Laravel Queue Worker"
+
+  # Scheduler (Laravel Cron)
+  scheduler:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+      args:
+        GIT_REPO: ${GIT_REPO:-https://github.com/your-username/laravel-fsm.git}
+        GIT_BRANCH: ${GIT_BRANCH:-phase1-core}
+        GIT_TOKEN: ${GIT_TOKEN:-}
+    image: laravel-fsm-gitops:latest
+    container_name: laravel-fsm-scheduler
+    restart: unless-stopped
+    command: ["/usr/local/bin/scheduler-entrypoint.sh"]
+    environment:
+      DB_CONNECTION: mysql
+      DB_HOST: mysql
+      DB_PORT: 3306
+      DB_DATABASE: ${DB_DATABASE:-laravel_fsm}
+      DB_USERNAME: ${DB_USERNAME:-sail}
+      DB_PASSWORD: ${DB_PASSWORD:-password}
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+    volumes:
+      - app-storage:/var/www/html/storage
+    networks:
+      - laravel-network
+    depends_on:
+      mysql:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    labels:
+      - "com.portainer.description=Laravel Scheduler (Cron)"
+
 networks:
-    sail:
-        driver: bridge
+  laravel-network:
+    driver: bridge
+    labels:
+      - "com.portainer.description=Laravel FSM Network"
+
 volumes:
-    sail-mysql:
-        driver: local
-    sail-redis:
-        driver: local
-    sail-meilisearch:
-        driver: local
+  mysql-data:
+    driver: local
+    labels:
+      - "com.portainer.description=MySQL Data"
+
+  redis-data:
+    driver: local
+    labels:
+      - "com.portainer.description=Redis Data"
+
+  meilisearch-data:
+    driver: local
+    labels:
+      - "com.portainer.description=Meilisearch Data"
+
+  app-storage:
+    driver: local
+    labels:
+      - "com.portainer.description=Laravel Storage"
+
+  app-bootstrap:
+    driver: local
+    labels:
+      - "com.portainer.description=Laravel Bootstrap Cache"
+
+  app-modules:
+    driver: local
+    labels:
+      - "com.portainer.description=Laravel Modules"
