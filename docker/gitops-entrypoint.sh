@@ -561,6 +561,9 @@ main() {
     log SUCCESS "========================================="
     log INFO "Starting services via Supervisor..."
 
+    # Ensure supervisor log directory exists
+    mkdir -p /var/log/supervisor
+
     # Start supervisor (PHP-FPM + Nginx)
     exec /usr/bin/supervisord -c /etc/supervisor/conf.d/supervisord.conf
 }
