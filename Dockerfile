@@ -4,7 +4,7 @@ FROM laravelsail/php80-composer
 # install system dependencies
 # RUN curl -sS https://getcomposer.org/installer | php \
 #     && mv composer.phar /usr/bin/composer
-COPY --from=composer/composer:latest-bin /composer /usr/bin/composer
+# COPY --from=composer/composer:latest-bin /composer /usr/bin/composer
 
 # Set working directory inside container
 WORKDIR /var/www/html
