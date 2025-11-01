@@ -104,17 +104,32 @@ initial_clone() {
         log INFO "Cloning repository..."
 
         # Backup any existing files
-        if [ "$(ls -A $PROJECT_DIR)" ]; then
+        if [ "$(ls -A $PROJECT_DIR 2>/dev/null)" ]; then
             log WARNING "Project directory not empty, creating backup..."
             mkdir -p /tmp/project-backup
             mv "$PROJECT_DIR"/* /tmp/project-backup/ 2>/dev/null || true
+            mv "$PROJECT_DIR"/.[!.]* /tmp/project-backup/ 2>/dev/null || true
         fi
 
-        # Clone repository
-        git clone --branch "$GITOPS_BRANCH" "$GIT_REPO" "$PROJECT_DIR" || {
+        # Clone to temp directory then move contents
+        log INFO "Cloning to temporary directory..."
+        TEMP_CLONE="/tmp/git-clone-$$"
+        rm -rf "$TEMP_CLONE"
+
+        git clone --branch "$GITOPS_BRANCH" "$GIT_REPO" "$TEMP_CLONE" || {
             log ERROR "Failed to clone repository"
             exit 1
         }
+
+        # Move cloned files to project directory
+        log INFO "Moving repository to project directory..."
+        mkdir -p "$PROJECT_DIR"
+        mv "$TEMP_CLONE"/.git "$PROJECT_DIR/" 2>/dev/null || true
+        mv "$TEMP_CLONE"/* "$PROJECT_DIR/" 2>/dev/null || true
+        mv "$TEMP_CLONE"/.[!.]* "$PROJECT_DIR/" 2>/dev/null || true
+        rm -rf "$TEMP_CLONE"
+
+        log SUCCESS "Repository cloned successfully"
     fi
 
     # Navigate to phase_1 if it exists
