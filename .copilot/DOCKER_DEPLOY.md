@@ -78,7 +78,7 @@ GITOPS_ENABLED=false
 DB_PASSWORD=your_secure_password
 
 # If using GitOps, configure these:
-GIT_REPO=https://github.com/your-username/laravel-fsm.git
+GIT_REPO=https://github.com/Krisaley/service-portal.git
 GIT_BRANCH=main
 GIT_TOKEN=your_github_token  # For private repos
 ```
