@@ -5,6 +5,7 @@
 .git
 .gitignore
 .gitattributes
+.copilot
 
 # Documentation
 *.md
@@ -38,7 +39,7 @@ desktop.ini
 /storage/logs/*.log
 .env
 .env.backup
-.env.example
+#.env.example # (Uncomment if you want to exclude example env file)
 .phpunit.result.cache
 Homestead.json
 Homestead.yaml
@@ -71,3 +72,7 @@ circle.yml
 *.swo
 *~
 .cache
+
+# exclude ai_helpers directory and its contents
+/ai_helpers
+/ai_helpers/*
