@@ -501,7 +501,7 @@ run_migrations() {
 
         # Wait for database to be ready
         log INFO "Waiting for database connection..."
-        local max_attempts=30
+        local max_attempts=90
         local attempt=1
 
         while [ $attempt -le $max_attempts ]; do

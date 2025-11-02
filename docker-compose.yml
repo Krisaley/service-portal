@@ -76,6 +76,11 @@ services:
     #   timeout: 10s
     #   retries: 3
     #   start_period: 40s
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
     labels:
       - "com.portainer.description=Laravel FSM Phase 1 with GitOps"
       - "com.portainer.gitops.enabled=true"
@@ -108,6 +113,11 @@ services:
       timeout: 10s
       retries: 20
       start_period: 60s
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
     labels:
       - "com.portainer.description=MySQL 8.0 Database"
 
@@ -128,6 +138,11 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
     labels:
       - "com.portainer.description=Redis Cache & Queue"
 
@@ -153,6 +168,11 @@ services:
       timeout: 10s
       retries: 10
       start_period: 30s
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
     labels:
       - "com.portainer.description=Meilisearch Full-Text Search"
 
@@ -193,6 +213,11 @@ services:
         condition: service_started
       redis:
         condition: service_started
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
     labels:
       - "com.portainer.description=Laravel Queue Worker"
 
@@ -231,6 +256,11 @@ services:
         condition: service_started
       redis:
         condition: service_started
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
     labels:
       - "com.portainer.description=Laravel Scheduler (Cron)"
 
