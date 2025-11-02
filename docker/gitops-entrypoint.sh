@@ -427,7 +427,72 @@ setup_laravel() {
     # Create module directories
     mkdir -p modules database/modules public/modules
 
+    # Publish vendor resources if not already published
+    publish_vendor_resources
+
     log SUCCESS "Laravel setup complete"
+}
+
+publish_vendor_resources() {
+    log INFO "Checking vendor resources..."
+
+    # Check if critical config files exist
+    local needs_publish=false
+
+    # Check for Laravel core configs
+    if [ ! -f "config/app.php" ] || [ ! -f "config/auth.php" ] || [ ! -f "config/database.php" ]; then
+        log WARNING "Missing Laravel core config files"
+        needs_publish=true
+    fi
+
+    # If we need to publish, do a full vendor publish
+    if [ "$needs_publish" = true ]; then
+        log INFO "Publishing all vendor resources (configs, views, assets)..."
+
+        # Publish Laravel core configurations
+        php artisan vendor:publish --tag=laravel-config --force 2>&1 | tee -a "$GITOPS_LOG" || log WARNING "Failed to publish Laravel configs"
+
+        # Publish Jetstream resources
+        if composer show laravel/jetstream 2>/dev/null; then
+            log INFO "Publishing Jetstream resources..."
+            php artisan vendor:publish --tag=jetstream-config --force 2>&1 | tee -a "$GITOPS_LOG" || log WARNING "Failed to publish Jetstream config"
+            php artisan vendor:publish --tag=jetstream-views --force 2>&1 | tee -a "$GITOPS_LOG" || log WARNING "Failed to publish Jetstream views"
+        fi
+
+        # Publish Fortify resources
+        if composer show laravel/fortify 2>/dev/null; then
+            log INFO "Publishing Fortify resources..."
+            php artisan vendor:publish --provider="Laravel\Fortify\FortifyServiceProvider" --force 2>&1 | tee -a "$GITOPS_LOG" || log WARNING "Failed to publish Fortify resources"
+        fi
+
+        # Publish Livewire resources
+        if composer show livewire/livewire 2>/dev/null; then
+            log INFO "Publishing Livewire config..."
+            php artisan vendor:publish --tag=livewire:config --force 2>&1 | tee -a "$GITOPS_LOG" || log WARNING "Failed to publish Livewire config"
+        fi
+
+        # Publish Filament resources
+        if composer show filament/filament 2>/dev/null; then
+            log INFO "Publishing Filament resources..."
+            php artisan vendor:publish --tag=filament-config --force 2>&1 | tee -a "$GITOPS_LOG" || log WARNING "Failed to publish Filament config"
+        fi
+
+        # Publish Spatie Activity Log
+        if composer show spatie/laravel-activitylog 2>/dev/null; then
+            log INFO "Publishing Activity Log config..."
+            php artisan vendor:publish --provider="Spatie\Activitylog\ActivitylogServiceProvider" --tag="activitylog-config" --force 2>&1 | tee -a "$GITOPS_LOG" || true
+        fi
+
+        # Publish Spatie Permission
+        if composer show spatie/laravel-permission 2>/dev/null; then
+            log INFO "Publishing Permission config..."
+            php artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvider" --force 2>&1 | tee -a "$GITOPS_LOG" || true
+        fi
+
+        log SUCCESS "Vendor resources published"
+    else
+        log SUCCESS "Vendor resources already published"
+    fi
 }
 
 run_migrations() {

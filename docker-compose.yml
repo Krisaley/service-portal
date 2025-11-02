@@ -142,6 +142,7 @@ services:
       MEILI_ENV: ${MEILI_ENV:-development}
       MEILI_NO_ANALYTICS: ${MEILI_NO_ANALYTICS:-true}
       MEILI_MASTER_KEY: ${MEILI_MASTER_KEY:-masterKey}
+      MEILI_LOG_LEVEL: 'WARN'
     volumes:
       - meilisearch-data:/meili_data
     networks:
