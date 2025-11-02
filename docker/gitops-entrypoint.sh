@@ -221,10 +221,10 @@ install_npm_dependencies() {
 
     # Use npm ci if package-lock.json exists, otherwise use npm install
     if [ -f "package-lock.json" ]; then
-        NPM_CMD="npm ci --production"
+        NPM_CMD="npm ci"
     else
         log WARNING "No package-lock.json found, using npm install instead of npm ci"
-        NPM_CMD="npm install --production"
+        NPM_CMD="npm install"
     fi
 
     if $NPM_CMD 2>&1 | tee -a "$GITOPS_LOG"; then
