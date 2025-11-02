@@ -3,6 +3,8 @@ version: '3.8'
 # Laravel FSM Phase 1 - GitOps Dev Deployment
 # Designed for Portainer with automatic git updates every 5 minutes
 
+# quick note: dockerfile.env lists build args for local development builds
+
 services:
   # Main Laravel Application with GitOps
   app:
@@ -25,7 +27,7 @@ services:
       APP_NAME: ${APP_NAME:-Laravel FSM Phase 1}
       APP_ENV: ${APP_ENV:-development}
       APP_DEBUG: ${APP_DEBUG:-true}
-      APP_URL: ${APP_URL:-http://localhost:8080}
+      APP_URL: ${APP_URL:-}
 
       # Database
       DB_CONNECTION: mysql
@@ -52,6 +54,8 @@ services:
       GITOPS_BRANCH: ${GIT_BRANCH:-phase1-core}
       GITOPS_AUTO_MIGRATE: ${GITOPS_AUTO_MIGRATE:-true}
       GITOPS_AUTO_INSTALL: ${GITOPS_AUTO_INSTALL:-true}
+      GITOPS_AUTO_SEED: ${GITOPS_AUTO_SEED:-true}
+      SEED_DEMO_DATA: ${SEED_DEMO_DATA:-false}
 
       # Jetstream
       JETSTREAM_STACK: livewire

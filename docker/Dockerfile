@@ -1,7 +1,9 @@
 # Laravel FSM Phase 1 - GitOps Docker Image
 # This container automatically pulls updates from git every 5 minutes
 
-FROM php:8.2-fpm-alpine
+# FROM php:8.2-fpm-alpine # old line
+#cjr
+FROM php:8.3-fpm-alpine
 
 # Build arguments
 ARG GIT_REPO

@@ -16,5 +16,11 @@ class DatabaseSeeder extends Seeder
             ModuleSeeder::class,
             TestUserSeeder::class,
         ]);
+
+        if (env('SEED_DEMO_DATA', false)) {
+            $this->call([
+                DemoDataSeeder::class,
+            ]);
+        }
     }
 }

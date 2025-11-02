@@ -77,89 +77,78 @@ setup_git_credentials() {
     fi
 }
 
-#cjr - modified function, see gitops-entrypoint.sh.old for previous version
 initial_clone() {
-         log INFO "========================================="
-         log INFO "Starting Initial Repository Setup"
-         log INFO "========================================="
+    log INFO "========================================="
+    log INFO "Starting Initial Repository Setup"
+    log INFO "========================================="
 
-         if [ -z "$GIT_REPO" ]; then
-             log ERROR "GIT_REPO environment variable not set"
-             exit 1
-         fi
+    if [ -z "$GIT_REPO" ]; then
+        log ERROR "GIT_REPO environment variable not set"
+        exit 1
+    fi
 
-         log INFO "Repository: $GIT_REPO"
-         log INFO "Branch: $GITOPS_BRANCH"
+    log INFO "Repository: $GIT_REPO"
+    log INFO "Branch: $GITOPS_BRANCH"
 
-         setup_git_credentials
+    # Setup git credentials if token provided
+    setup_git_credentials
 
-         git config --global --add safe.directory /tmp/git-repo
-         git config --global --add safe.directory /var/www/html
+    # Add safe directory to prevent git ownership errors
+    git config --global --add safe.directory /var/www/html
 
-         #cjr - Issue 7: Use build directory to keep git/docker files separate
-         local BUILD_DIR="/tmp/git-repo"
-         local DEPLOY_DIR="/var/www/html"
+    # Remove existing directory if empty or invalid
+    if [ -d "$PROJECT_DIR/.git" ]; then
+        log INFO "Git repository already exists, pulling latest changes..."
+        cd "$PROJECT_DIR"
+        git fetch origin
+        git checkout "$GITOPS_BRANCH" || git checkout -b "$GITOPS_BRANCH" origin/"$GITOPS_BRANCH"
+        git pull origin "$GITOPS_BRANCH"
+    else
+        log INFO "Cloning repository..."
 
-         # Clone or update in build directory
-         if [ -d "$BUILD_DIR/.git" ]; then
-             log INFO "Build repository exists, updating..."
-             cd "$BUILD_DIR"
-             git fetch origin
-             git checkout "$GITOPS_BRANCH" || git checkout -b "$GITOPS_BRANCH" origin/"$GITOPS_BRANCH"
-             git pull origin "$GITOPS_BRANCH"
-         else
-             log INFO "Cloning repository to build directory..."
-             rm -rf "$BUILD_DIR"
-             mkdir -p "$BUILD_DIR"
+        # Backup any existing files
+        if [ "$(ls -A $PROJECT_DIR 2>/dev/null)" ]; then
+            log WARNING "Project directory not empty, creating backup..."
+            mkdir -p /tmp/project-backup
+            mv "$PROJECT_DIR"/* /tmp/project-backup/ 2>/dev/null || true
+            mv "$PROJECT_DIR"/.[!.]* /tmp/project-backup/ 2>/dev/null || true
+        fi
 
-             git clone --branch "$GITOPS_BRANCH" "$GIT_REPO" "$BUILD_DIR" || {
-                 log ERROR "Failed to clone repository"
-                 exit 1
-             }
-         fi
+        # Clone to temp directory then move contents
+        log INFO "Cloning to temporary directory..."
+        TEMP_CLONE="/tmp/git-clone-$$"
+        rm -rf "$TEMP_CLONE"
 
-         # Sync only Laravel application files to deployment directory
-         log INFO "Syncing application files to deployment directory..."
+        git clone --branch "$GITOPS_BRANCH" "$GIT_REPO" "$TEMP_CLONE" || {
+            log ERROR "Failed to clone repository"
+            exit 1
+        }
 
-         rsync -av --delete \
-             --exclude='.git' \
-             --exclude='docker/' \
-             --exclude='node_modules/' \
-             --exclude='tests/' \
-             --exclude='.github/' \
-             --exclude='.gitignore' \
-             --exclude='.dockerignore' \
-             --exclude='docker-compose.yml' \
-             --exclude='README.md' \
-             --exclude='.env.example' \
-             --exclude='quick-start.sh' \
-             --exclude='.user_diagnosed_issues/' \
-             "$BUILD_DIR/" "$DEPLOY_DIR/" || {
-             log ERROR "Failed to sync files"
-             exit 1
-         }
+        # Move cloned files to project directory
+        log INFO "Moving repository to project directory..."
+        mkdir -p "$PROJECT_DIR"
 
-         # Copy .env.example (needed for initial setup)
-         if [ -f "$BUILD_DIR/.env.example" ] && [ ! -f "$DEPLOY_DIR/.env" ]; then
-             cp "$BUILD_DIR/.env.example" "$DEPLOY_DIR/.env.example"
-         fi
+        # Use cp -a to preserve all attributes, then remove temp
+        cp -a "$TEMP_CLONE"/. "$PROJECT_DIR/"
+        rm -rf "$TEMP_CLONE"
 
-         # Fix ownership
-         chown -R www-data:www-data "$DEPLOY_DIR"
+        # Fix ownership to www-data
+        chown -R www-data:www-data "$PROJECT_DIR"
 
-         log SUCCESS "Repository synced to deployment directory"
+        log SUCCESS "Repository cloned successfully"
+    fi
 
-         # Navigate to phase_1 if it exists
-         if [ -d "$DEPLOY_DIR/phase_1" ]; then
-             cd "$DEPLOY_DIR/phase_1"
-             log SUCCESS "Switched to phase_1 directory"
-         else
-             cd "$DEPLOY_DIR"
-         fi
+    # Navigate to phase_1 if it exists
+    if [ -d "$PHASE1_DIR" ]; then
+        cd "$PHASE1_DIR"
+        log SUCCESS "Switched to phase_1 directory"
+    else
+        cd "$PROJECT_DIR"
+        log WARNING "phase_1 directory not found, using project root"
+    fi
 
-         log SUCCESS "Repository setup complete"
-     }
-
+    log SUCCESS "Repository setup complete"
+}
 
 ################################################################################
 # Dependency Management
@@ -564,23 +553,6 @@ publish_vendor_resources() {
     fi
 }
 
-#cjr - new function
-run_seeders() {
-    if [ "$GITOPS_AUTO_SEED" = "true" ]; then
-        log INFO "Running database seeders..."
-
-        # Run DatabaseSeeder - it handles all seeding logic internally
-        if php artisan db:seed --force 2>&1 | tee -a "$GITOPS_LOG"; then
-            log SUCCESS "Database seeding complete"
-        else
-            log WARNING "Database seeding failed, but continuing..."
-        fi
-    else
-        log INFO "Auto-seeding disabled, skipping..."
-    fi
-}
-
-
 run_migrations() {
     if [ "$GITOPS_AUTO_MIGRATE" = "true" ]; then
         log INFO "Running database migrations..."
@@ -609,10 +581,6 @@ run_migrations() {
         # Run migrations
         if php artisan migrate --force 2>&1 | tee -a "$GITOPS_LOG"; then
             log SUCCESS "Migrations completed successfully"
-
-            #cjr Seed database if needed here
-            run_seeders
-
         else
             log ERROR "Migrations failed"
             return 1
