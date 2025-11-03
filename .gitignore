@@ -29,3 +29,5 @@ _ide_helper_models.php
 /claude-continue.md
 /.ai_helper_scripts
 /logs
+/docker/dockerfile.env
+/docker/dockerfile.env.backup
