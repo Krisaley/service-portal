@@ -40,6 +40,7 @@ desktop.ini
 .env
 .env.backup
 #.env.example # (Uncomment if you want to exclude example env file)
+#.env.docker.example # (Uncomment if you want to exclude example env file)
 .phpunit.result.cache
 Homestead.json
 Homestead.yaml

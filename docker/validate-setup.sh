@@ -29,7 +29,7 @@ echo "Checking required files..."
 required_files=(
     "docker-compose.yml"
     "Dockerfile"
-    ".env.example"
+    ".env.docker.example"
     "gitops-entrypoint.sh"
     "gitops-update.sh"
     "scheduler-entrypoint.sh"
@@ -105,8 +105,8 @@ if [ -f ".env" ]; then
     fi
 
 else
-    echo -e "${YELLOW}⚠${NC} .env file not found (copy .env.example to .env)"
-    echo "  Run: cp .env.example .env"
+    echo -e "${YELLOW}⚠${NC} .env file not found (copy .env.docker.example to .env)"
+    echo "  Run: cp .env.docker.example .env"
     ((WARNINGS++))
 fi
 
@@ -147,7 +147,7 @@ if [ $ERRORS -eq 0 ] && [ $WARNINGS -eq 0 ]; then
     echo -e "${GREEN}✓ All checks passed!${NC}"
     echo ""
     echo "You're ready to deploy:"
-    echo "1. Copy .env.example to .env (if not done)"
+    echo "1. Copy .env.docker.example to .env (if not done)"
     echo "2. Edit .env with your settings"
     echo "3. Run: docker-compose up -d --build"
     echo ""

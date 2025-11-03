@@ -131,7 +131,7 @@ initial_clone() {
              --exclude='.dockerignore' \
              --exclude='docker-compose.yml' \
              --exclude='README.md' \
-             --exclude='.env.example' \
+             --exclude='.env.docker.example' \
              --exclude='quick-start.sh' \
              --exclude='.user_diagnosed_issues/' \
              "$BUILD_DIR/" "$DEPLOY_DIR/" || {
@@ -139,9 +139,9 @@ initial_clone() {
              exit 1
          }
 
-         # Copy .env.example (needed for initial setup)
-         if [ -f "$BUILD_DIR/.env.example" ] && [ ! -f "$DEPLOY_DIR/.env" ]; then
-             cp "$BUILD_DIR/.env.example" "$DEPLOY_DIR/.env.example"
+         # Copy .env.docker.example (needed for initial setup)
+         if [ -f "$BUILD_DIR/.env.docker.example" ] && [ ! -f "$DEPLOY_DIR/.env" ]; then
+             cp "$BUILD_DIR/.env.docker.example" "$DEPLOY_DIR/.env"
          fi
 
          # Fix ownership
@@ -435,11 +435,11 @@ setup_laravel() {
 
     # Create .env if doesn't exist (MUST be first)
     if [ ! -f ".env" ]; then
-        if [ -f ".env.example" ]; then
-            log INFO "Creating .env from .env.example..."
-            cp .env.example .env
+        if [ -f ".env.docker.example" ]; then
+            log INFO "Creating .env from .env.docker.example..."
+            cp .env.docker.example .env
         else
-            log WARNING "No .env.example found, creating basic .env..."
+            log WARNING "No .env.docker.example found, creating basic .env..."
             echo "APP_NAME=Laravel" > .env
             echo "APP_ENV=local" >> .env
             echo "APP_KEY=" >> .env
