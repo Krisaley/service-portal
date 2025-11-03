@@ -756,3 +756,678 @@
 #4 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
 #5 {main}
 "} 
+[2025-11-02 22:29:28] development.ERROR: Unable to detect application namespace. {"exception":"[object] (RuntimeException(code: 0): Unable to detect application namespace. at C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:1717)
+[stacktrace]
+#0 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(368): Illuminate\\Foundation\\Application->getNamespace()
+#1 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(498): Illuminate\\Foundation\\Console\\Kernel->load(Array)
+#2 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(483): Illuminate\\Foundation\\Console\\Kernel->discoverCommands()
+#3 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(196): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#4 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2025-11-02 22:30:28] development.ERROR: Unable to detect application namespace. {"exception":"[object] (RuntimeException(code: 0): Unable to detect application namespace. at C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:1717)
+[stacktrace]
+#0 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(368): Illuminate\\Foundation\\Application->getNamespace()
+#1 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(498): Illuminate\\Foundation\\Console\\Kernel->load(Array)
+#2 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(483): Illuminate\\Foundation\\Console\\Kernel->discoverCommands()
+#3 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(196): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#4 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2025-11-02 22:31:28] development.ERROR: Unable to detect application namespace. {"exception":"[object] (RuntimeException(code: 0): Unable to detect application namespace. at C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:1717)
+[stacktrace]
+#0 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(368): Illuminate\\Foundation\\Application->getNamespace()
+#1 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(498): Illuminate\\Foundation\\Console\\Kernel->load(Array)
+#2 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(483): Illuminate\\Foundation\\Console\\Kernel->discoverCommands()
+#3 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(196): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#4 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2025-11-02 22:31:28] development.ERROR: Unable to detect application namespace. {"exception":"[object] (RuntimeException(code: 0): Unable to detect application namespace. at C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:1717)
+[stacktrace]
+#0 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(368): Illuminate\\Foundation\\Application->getNamespace()
+#1 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(498): Illuminate\\Foundation\\Console\\Kernel->load(Array)
+#2 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(483): Illuminate\\Foundation\\Console\\Kernel->discoverCommands()
+#3 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(196): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#4 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2025-11-02 22:32:28] development.ERROR: Unable to detect application namespace. {"exception":"[object] (RuntimeException(code: 0): Unable to detect application namespace. at C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:1717)
+[stacktrace]
+#0 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(368): Illuminate\\Foundation\\Application->getNamespace()
+#1 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(498): Illuminate\\Foundation\\Console\\Kernel->load(Array)
+#2 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(483): Illuminate\\Foundation\\Console\\Kernel->discoverCommands()
+#3 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(196): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#4 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2025-11-02 22:32:28] development.ERROR: Unable to detect application namespace. {"exception":"[object] (RuntimeException(code: 0): Unable to detect application namespace. at C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:1717)
+[stacktrace]
+#0 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(368): Illuminate\\Foundation\\Application->getNamespace()
+#1 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(498): Illuminate\\Foundation\\Console\\Kernel->load(Array)
+#2 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(483): Illuminate\\Foundation\\Console\\Kernel->discoverCommands()
+#3 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(196): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#4 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2025-11-02 22:33:28] development.ERROR: Unable to detect application namespace. {"exception":"[object] (RuntimeException(code: 0): Unable to detect application namespace. at C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:1717)
+[stacktrace]
+#0 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(368): Illuminate\\Foundation\\Application->getNamespace()
+#1 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(498): Illuminate\\Foundation\\Console\\Kernel->load(Array)
+#2 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(483): Illuminate\\Foundation\\Console\\Kernel->discoverCommands()
+#3 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(196): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#4 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2025-11-02 22:34:28] development.ERROR: Unable to detect application namespace. {"exception":"[object] (RuntimeException(code: 0): Unable to detect application namespace. at C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:1717)
+[stacktrace]
+#0 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(368): Illuminate\\Foundation\\Application->getNamespace()
+#1 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(498): Illuminate\\Foundation\\Console\\Kernel->load(Array)
+#2 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(483): Illuminate\\Foundation\\Console\\Kernel->discoverCommands()
+#3 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(196): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#4 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2025-11-02 22:34:28] development.ERROR: Unable to detect application namespace. {"exception":"[object] (RuntimeException(code: 0): Unable to detect application namespace. at C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:1717)
+[stacktrace]
+#0 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(368): Illuminate\\Foundation\\Application->getNamespace()
+#1 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(498): Illuminate\\Foundation\\Console\\Kernel->load(Array)
+#2 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(483): Illuminate\\Foundation\\Console\\Kernel->discoverCommands()
+#3 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(196): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#4 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2025-11-02 22:35:28] development.ERROR: Unable to detect application namespace. {"exception":"[object] (RuntimeException(code: 0): Unable to detect application namespace. at C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:1717)
+[stacktrace]
+#0 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(368): Illuminate\\Foundation\\Application->getNamespace()
+#1 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(498): Illuminate\\Foundation\\Console\\Kernel->load(Array)
+#2 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(483): Illuminate\\Foundation\\Console\\Kernel->discoverCommands()
+#3 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(196): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#4 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2025-11-02 22:35:28] development.ERROR: Unable to detect application namespace. {"exception":"[object] (RuntimeException(code: 0): Unable to detect application namespace. at C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:1717)
+[stacktrace]
+#0 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(368): Illuminate\\Foundation\\Application->getNamespace()
+#1 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(498): Illuminate\\Foundation\\Console\\Kernel->load(Array)
+#2 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(483): Illuminate\\Foundation\\Console\\Kernel->discoverCommands()
+#3 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(196): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#4 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2025-11-02 22:35:28] development.ERROR: Unable to detect application namespace. {"exception":"[object] (RuntimeException(code: 0): Unable to detect application namespace. at C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:1717)
+[stacktrace]
+#0 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(368): Illuminate\\Foundation\\Application->getNamespace()
+#1 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(498): Illuminate\\Foundation\\Console\\Kernel->load(Array)
+#2 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(483): Illuminate\\Foundation\\Console\\Kernel->discoverCommands()
+#3 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(196): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#4 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2025-11-03 06:18:14] development.ERROR: Unable to detect application namespace. {"exception":"[object] (RuntimeException(code: 0): Unable to detect application namespace. at C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:1717)
+[stacktrace]
+#0 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(368): Illuminate\\Foundation\\Application->getNamespace()
+#1 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(498): Illuminate\\Foundation\\Console\\Kernel->load(Array)
+#2 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(483): Illuminate\\Foundation\\Console\\Kernel->discoverCommands()
+#3 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(196): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#4 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2025-11-03 06:18:14] development.ERROR: Unable to detect application namespace. {"exception":"[object] (RuntimeException(code: 0): Unable to detect application namespace. at C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:1717)
+[stacktrace]
+#0 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(368): Illuminate\\Foundation\\Application->getNamespace()
+#1 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(498): Illuminate\\Foundation\\Console\\Kernel->load(Array)
+#2 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(483): Illuminate\\Foundation\\Console\\Kernel->discoverCommands()
+#3 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(196): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#4 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2025-11-03 06:18:57] development.ERROR: Unable to detect application namespace. {"exception":"[object] (RuntimeException(code: 0): Unable to detect application namespace. at C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:1717)
+[stacktrace]
+#0 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(368): Illuminate\\Foundation\\Application->getNamespace()
+#1 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(498): Illuminate\\Foundation\\Console\\Kernel->load(Array)
+#2 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(483): Illuminate\\Foundation\\Console\\Kernel->discoverCommands()
+#3 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(196): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#4 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2025-11-03 06:19:57] development.ERROR: Unable to detect application namespace. {"exception":"[object] (RuntimeException(code: 0): Unable to detect application namespace. at C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:1717)
+[stacktrace]
+#0 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(368): Illuminate\\Foundation\\Application->getNamespace()
+#1 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(498): Illuminate\\Foundation\\Console\\Kernel->load(Array)
+#2 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(483): Illuminate\\Foundation\\Console\\Kernel->discoverCommands()
+#3 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(196): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#4 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2025-11-03 06:20:57] development.ERROR: Unable to detect application namespace. {"exception":"[object] (RuntimeException(code: 0): Unable to detect application namespace. at C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:1717)
+[stacktrace]
+#0 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(368): Illuminate\\Foundation\\Application->getNamespace()
+#1 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(498): Illuminate\\Foundation\\Console\\Kernel->load(Array)
+#2 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(483): Illuminate\\Foundation\\Console\\Kernel->discoverCommands()
+#3 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(196): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#4 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2025-11-03 06:21:57] development.ERROR: Unable to detect application namespace. {"exception":"[object] (RuntimeException(code: 0): Unable to detect application namespace. at C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:1717)
+[stacktrace]
+#0 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(368): Illuminate\\Foundation\\Application->getNamespace()
+#1 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(498): Illuminate\\Foundation\\Console\\Kernel->load(Array)
+#2 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(483): Illuminate\\Foundation\\Console\\Kernel->discoverCommands()
+#3 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(196): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#4 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2025-11-03 06:21:57] development.ERROR: Unable to detect application namespace. {"exception":"[object] (RuntimeException(code: 0): Unable to detect application namespace. at C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:1717)
+[stacktrace]
+#0 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(368): Illuminate\\Foundation\\Application->getNamespace()
+#1 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(498): Illuminate\\Foundation\\Console\\Kernel->load(Array)
+#2 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(483): Illuminate\\Foundation\\Console\\Kernel->discoverCommands()
+#3 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(196): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#4 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2025-11-03 06:22:57] development.ERROR: Unable to detect application namespace. {"exception":"[object] (RuntimeException(code: 0): Unable to detect application namespace. at C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:1717)
+[stacktrace]
+#0 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(368): Illuminate\\Foundation\\Application->getNamespace()
+#1 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(498): Illuminate\\Foundation\\Console\\Kernel->load(Array)
+#2 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(483): Illuminate\\Foundation\\Console\\Kernel->discoverCommands()
+#3 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(196): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#4 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2025-11-03 06:22:57] development.ERROR: Unable to detect application namespace. {"exception":"[object] (RuntimeException(code: 0): Unable to detect application namespace. at C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:1717)
+[stacktrace]
+#0 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(368): Illuminate\\Foundation\\Application->getNamespace()
+#1 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(498): Illuminate\\Foundation\\Console\\Kernel->load(Array)
+#2 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(483): Illuminate\\Foundation\\Console\\Kernel->discoverCommands()
+#3 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(196): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#4 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2025-11-03 06:23:57] development.ERROR: Unable to detect application namespace. {"exception":"[object] (RuntimeException(code: 0): Unable to detect application namespace. at C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:1717)
+[stacktrace]
+#0 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(368): Illuminate\\Foundation\\Application->getNamespace()
+#1 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(498): Illuminate\\Foundation\\Console\\Kernel->load(Array)
+#2 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(483): Illuminate\\Foundation\\Console\\Kernel->discoverCommands()
+#3 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(196): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#4 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2025-11-03 06:24:57] development.ERROR: Unable to detect application namespace. {"exception":"[object] (RuntimeException(code: 0): Unable to detect application namespace. at C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:1717)
+[stacktrace]
+#0 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(368): Illuminate\\Foundation\\Application->getNamespace()
+#1 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(498): Illuminate\\Foundation\\Console\\Kernel->load(Array)
+#2 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(483): Illuminate\\Foundation\\Console\\Kernel->discoverCommands()
+#3 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(196): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#4 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2025-11-03 06:25:57] development.ERROR: Unable to detect application namespace. {"exception":"[object] (RuntimeException(code: 0): Unable to detect application namespace. at C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:1717)
+[stacktrace]
+#0 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(368): Illuminate\\Foundation\\Application->getNamespace()
+#1 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(498): Illuminate\\Foundation\\Console\\Kernel->load(Array)
+#2 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(483): Illuminate\\Foundation\\Console\\Kernel->discoverCommands()
+#3 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(196): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#4 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2025-11-03 06:25:57] development.ERROR: Unable to detect application namespace. {"exception":"[object] (RuntimeException(code: 0): Unable to detect application namespace. at C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:1717)
+[stacktrace]
+#0 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(368): Illuminate\\Foundation\\Application->getNamespace()
+#1 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(498): Illuminate\\Foundation\\Console\\Kernel->load(Array)
+#2 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(483): Illuminate\\Foundation\\Console\\Kernel->discoverCommands()
+#3 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(196): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#4 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2025-11-03 06:26:57] development.ERROR: Unable to detect application namespace. {"exception":"[object] (RuntimeException(code: 0): Unable to detect application namespace. at C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:1717)
+[stacktrace]
+#0 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(368): Illuminate\\Foundation\\Application->getNamespace()
+#1 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(498): Illuminate\\Foundation\\Console\\Kernel->load(Array)
+#2 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(483): Illuminate\\Foundation\\Console\\Kernel->discoverCommands()
+#3 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(196): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#4 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2025-11-03 06:26:57] development.ERROR: Unable to detect application namespace. {"exception":"[object] (RuntimeException(code: 0): Unable to detect application namespace. at C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:1717)
+[stacktrace]
+#0 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(368): Illuminate\\Foundation\\Application->getNamespace()
+#1 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(498): Illuminate\\Foundation\\Console\\Kernel->load(Array)
+#2 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(483): Illuminate\\Foundation\\Console\\Kernel->discoverCommands()
+#3 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(196): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#4 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2025-11-03 06:27:57] development.ERROR: Unable to detect application namespace. {"exception":"[object] (RuntimeException(code: 0): Unable to detect application namespace. at C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:1717)
+[stacktrace]
+#0 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(368): Illuminate\\Foundation\\Application->getNamespace()
+#1 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(498): Illuminate\\Foundation\\Console\\Kernel->load(Array)
+#2 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(483): Illuminate\\Foundation\\Console\\Kernel->discoverCommands()
+#3 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(196): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#4 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2025-11-03 06:27:57] development.ERROR: Unable to detect application namespace. {"exception":"[object] (RuntimeException(code: 0): Unable to detect application namespace. at C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:1717)
+[stacktrace]
+#0 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(368): Illuminate\\Foundation\\Application->getNamespace()
+#1 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(498): Illuminate\\Foundation\\Console\\Kernel->load(Array)
+#2 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(483): Illuminate\\Foundation\\Console\\Kernel->discoverCommands()
+#3 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(196): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#4 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2025-11-03 06:27:57] development.ERROR: Unable to detect application namespace. {"exception":"[object] (RuntimeException(code: 0): Unable to detect application namespace. at C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:1717)
+[stacktrace]
+#0 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(368): Illuminate\\Foundation\\Application->getNamespace()
+#1 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(498): Illuminate\\Foundation\\Console\\Kernel->load(Array)
+#2 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(483): Illuminate\\Foundation\\Console\\Kernel->discoverCommands()
+#3 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(196): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#4 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2025-11-03 06:28:57] development.ERROR: Unable to detect application namespace. {"exception":"[object] (RuntimeException(code: 0): Unable to detect application namespace. at C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:1717)
+[stacktrace]
+#0 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(368): Illuminate\\Foundation\\Application->getNamespace()
+#1 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(498): Illuminate\\Foundation\\Console\\Kernel->load(Array)
+#2 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(483): Illuminate\\Foundation\\Console\\Kernel->discoverCommands()
+#3 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(196): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#4 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2025-11-03 06:29:57] development.ERROR: Unable to detect application namespace. {"exception":"[object] (RuntimeException(code: 0): Unable to detect application namespace. at C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:1717)
+[stacktrace]
+#0 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(368): Illuminate\\Foundation\\Application->getNamespace()
+#1 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(498): Illuminate\\Foundation\\Console\\Kernel->load(Array)
+#2 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(483): Illuminate\\Foundation\\Console\\Kernel->discoverCommands()
+#3 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(196): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#4 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2025-11-03 06:30:57] development.ERROR: Unable to detect application namespace. {"exception":"[object] (RuntimeException(code: 0): Unable to detect application namespace. at C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:1717)
+[stacktrace]
+#0 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(368): Illuminate\\Foundation\\Application->getNamespace()
+#1 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(498): Illuminate\\Foundation\\Console\\Kernel->load(Array)
+#2 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(483): Illuminate\\Foundation\\Console\\Kernel->discoverCommands()
+#3 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(196): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#4 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2025-11-03 06:31:57] development.ERROR: Unable to detect application namespace. {"exception":"[object] (RuntimeException(code: 0): Unable to detect application namespace. at C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:1717)
+[stacktrace]
+#0 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(368): Illuminate\\Foundation\\Application->getNamespace()
+#1 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(498): Illuminate\\Foundation\\Console\\Kernel->load(Array)
+#2 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(483): Illuminate\\Foundation\\Console\\Kernel->discoverCommands()
+#3 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(196): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#4 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2025-11-03 06:32:57] development.ERROR: Unable to detect application namespace. {"exception":"[object] (RuntimeException(code: 0): Unable to detect application namespace. at C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:1717)
+[stacktrace]
+#0 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(368): Illuminate\\Foundation\\Application->getNamespace()
+#1 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(498): Illuminate\\Foundation\\Console\\Kernel->load(Array)
+#2 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(483): Illuminate\\Foundation\\Console\\Kernel->discoverCommands()
+#3 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(196): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#4 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2025-11-03 06:32:57] development.ERROR: Unable to detect application namespace. {"exception":"[object] (RuntimeException(code: 0): Unable to detect application namespace. at C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:1717)
+[stacktrace]
+#0 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(368): Illuminate\\Foundation\\Application->getNamespace()
+#1 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(498): Illuminate\\Foundation\\Console\\Kernel->load(Array)
+#2 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(483): Illuminate\\Foundation\\Console\\Kernel->discoverCommands()
+#3 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(196): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#4 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2025-11-03 06:33:57] development.ERROR: Unable to detect application namespace. {"exception":"[object] (RuntimeException(code: 0): Unable to detect application namespace. at C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:1717)
+[stacktrace]
+#0 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(368): Illuminate\\Foundation\\Application->getNamespace()
+#1 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(498): Illuminate\\Foundation\\Console\\Kernel->load(Array)
+#2 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(483): Illuminate\\Foundation\\Console\\Kernel->discoverCommands()
+#3 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(196): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#4 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2025-11-03 06:34:57] development.ERROR: Unable to detect application namespace. {"exception":"[object] (RuntimeException(code: 0): Unable to detect application namespace. at C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:1717)
+[stacktrace]
+#0 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(368): Illuminate\\Foundation\\Application->getNamespace()
+#1 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(498): Illuminate\\Foundation\\Console\\Kernel->load(Array)
+#2 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(483): Illuminate\\Foundation\\Console\\Kernel->discoverCommands()
+#3 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(196): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#4 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2025-11-03 06:35:57] development.ERROR: Unable to detect application namespace. {"exception":"[object] (RuntimeException(code: 0): Unable to detect application namespace. at C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:1717)
+[stacktrace]
+#0 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(368): Illuminate\\Foundation\\Application->getNamespace()
+#1 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(498): Illuminate\\Foundation\\Console\\Kernel->load(Array)
+#2 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(483): Illuminate\\Foundation\\Console\\Kernel->discoverCommands()
+#3 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(196): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#4 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2025-11-03 06:35:57] development.ERROR: Unable to detect application namespace. {"exception":"[object] (RuntimeException(code: 0): Unable to detect application namespace. at C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:1717)
+[stacktrace]
+#0 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(368): Illuminate\\Foundation\\Application->getNamespace()
+#1 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(498): Illuminate\\Foundation\\Console\\Kernel->load(Array)
+#2 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(483): Illuminate\\Foundation\\Console\\Kernel->discoverCommands()
+#3 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(196): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#4 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2025-11-03 06:36:57] development.ERROR: Unable to detect application namespace. {"exception":"[object] (RuntimeException(code: 0): Unable to detect application namespace. at C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:1717)
+[stacktrace]
+#0 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(368): Illuminate\\Foundation\\Application->getNamespace()
+#1 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(498): Illuminate\\Foundation\\Console\\Kernel->load(Array)
+#2 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(483): Illuminate\\Foundation\\Console\\Kernel->discoverCommands()
+#3 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(196): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#4 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2025-11-03 06:36:57] development.ERROR: Unable to detect application namespace. {"exception":"[object] (RuntimeException(code: 0): Unable to detect application namespace. at C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:1717)
+[stacktrace]
+#0 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(368): Illuminate\\Foundation\\Application->getNamespace()
+#1 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(498): Illuminate\\Foundation\\Console\\Kernel->load(Array)
+#2 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(483): Illuminate\\Foundation\\Console\\Kernel->discoverCommands()
+#3 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(196): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#4 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2025-11-03 06:37:57] development.ERROR: Unable to detect application namespace. {"exception":"[object] (RuntimeException(code: 0): Unable to detect application namespace. at C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:1717)
+[stacktrace]
+#0 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(368): Illuminate\\Foundation\\Application->getNamespace()
+#1 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(498): Illuminate\\Foundation\\Console\\Kernel->load(Array)
+#2 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(483): Illuminate\\Foundation\\Console\\Kernel->discoverCommands()
+#3 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(196): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#4 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2025-11-03 06:37:57] development.ERROR: Unable to detect application namespace. {"exception":"[object] (RuntimeException(code: 0): Unable to detect application namespace. at C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:1717)
+[stacktrace]
+#0 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(368): Illuminate\\Foundation\\Application->getNamespace()
+#1 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(498): Illuminate\\Foundation\\Console\\Kernel->load(Array)
+#2 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(483): Illuminate\\Foundation\\Console\\Kernel->discoverCommands()
+#3 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(196): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#4 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2025-11-03 06:37:57] development.ERROR: Unable to detect application namespace. {"exception":"[object] (RuntimeException(code: 0): Unable to detect application namespace. at C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:1717)
+[stacktrace]
+#0 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(368): Illuminate\\Foundation\\Application->getNamespace()
+#1 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(498): Illuminate\\Foundation\\Console\\Kernel->load(Array)
+#2 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(483): Illuminate\\Foundation\\Console\\Kernel->discoverCommands()
+#3 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(196): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#4 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2025-11-03 06:37:57] development.ERROR: Unable to detect application namespace. {"exception":"[object] (RuntimeException(code: 0): Unable to detect application namespace. at C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:1717)
+[stacktrace]
+#0 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(368): Illuminate\\Foundation\\Application->getNamespace()
+#1 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(498): Illuminate\\Foundation\\Console\\Kernel->load(Array)
+#2 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(483): Illuminate\\Foundation\\Console\\Kernel->discoverCommands()
+#3 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(196): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#4 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2025-11-03 06:38:57] development.ERROR: Unable to detect application namespace. {"exception":"[object] (RuntimeException(code: 0): Unable to detect application namespace. at C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:1717)
+[stacktrace]
+#0 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(368): Illuminate\\Foundation\\Application->getNamespace()
+#1 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(498): Illuminate\\Foundation\\Console\\Kernel->load(Array)
+#2 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(483): Illuminate\\Foundation\\Console\\Kernel->discoverCommands()
+#3 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(196): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#4 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2025-11-03 06:38:57] development.ERROR: Unable to detect application namespace. {"exception":"[object] (RuntimeException(code: 0): Unable to detect application namespace. at C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:1717)
+[stacktrace]
+#0 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(368): Illuminate\\Foundation\\Application->getNamespace()
+#1 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(498): Illuminate\\Foundation\\Console\\Kernel->load(Array)
+#2 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(483): Illuminate\\Foundation\\Console\\Kernel->discoverCommands()
+#3 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(196): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#4 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2025-11-03 06:39:57] development.ERROR: Unable to detect application namespace. {"exception":"[object] (RuntimeException(code: 0): Unable to detect application namespace. at C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:1717)
+[stacktrace]
+#0 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(368): Illuminate\\Foundation\\Application->getNamespace()
+#1 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(498): Illuminate\\Foundation\\Console\\Kernel->load(Array)
+#2 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(483): Illuminate\\Foundation\\Console\\Kernel->discoverCommands()
+#3 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(196): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#4 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2025-11-03 06:40:57] development.ERROR: Unable to detect application namespace. {"exception":"[object] (RuntimeException(code: 0): Unable to detect application namespace. at C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:1717)
+[stacktrace]
+#0 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(368): Illuminate\\Foundation\\Application->getNamespace()
+#1 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(498): Illuminate\\Foundation\\Console\\Kernel->load(Array)
+#2 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(483): Illuminate\\Foundation\\Console\\Kernel->discoverCommands()
+#3 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(196): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#4 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2025-11-03 06:40:57] development.ERROR: Unable to detect application namespace. {"exception":"[object] (RuntimeException(code: 0): Unable to detect application namespace. at C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:1717)
+[stacktrace]
+#0 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(368): Illuminate\\Foundation\\Application->getNamespace()
+#1 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(498): Illuminate\\Foundation\\Console\\Kernel->load(Array)
+#2 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(483): Illuminate\\Foundation\\Console\\Kernel->discoverCommands()
+#3 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(196): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#4 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2025-11-03 06:41:57] development.ERROR: Unable to detect application namespace. {"exception":"[object] (RuntimeException(code: 0): Unable to detect application namespace. at C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:1717)
+[stacktrace]
+#0 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(368): Illuminate\\Foundation\\Application->getNamespace()
+#1 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(498): Illuminate\\Foundation\\Console\\Kernel->load(Array)
+#2 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(483): Illuminate\\Foundation\\Console\\Kernel->discoverCommands()
+#3 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(196): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#4 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2025-11-03 06:42:56] development.ERROR: Unable to detect application namespace. {"exception":"[object] (RuntimeException(code: 0): Unable to detect application namespace. at C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:1717)
+[stacktrace]
+#0 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(368): Illuminate\\Foundation\\Application->getNamespace()
+#1 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(498): Illuminate\\Foundation\\Console\\Kernel->load(Array)
+#2 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(483): Illuminate\\Foundation\\Console\\Kernel->discoverCommands()
+#3 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(196): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#4 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2025-11-03 06:42:56] development.ERROR: Unable to detect application namespace. {"exception":"[object] (RuntimeException(code: 0): Unable to detect application namespace. at C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:1717)
+[stacktrace]
+#0 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(368): Illuminate\\Foundation\\Application->getNamespace()
+#1 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(498): Illuminate\\Foundation\\Console\\Kernel->load(Array)
+#2 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(483): Illuminate\\Foundation\\Console\\Kernel->discoverCommands()
+#3 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(196): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#4 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2025-11-03 06:43:57] development.ERROR: Unable to detect application namespace. {"exception":"[object] (RuntimeException(code: 0): Unable to detect application namespace. at C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:1717)
+[stacktrace]
+#0 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(368): Illuminate\\Foundation\\Application->getNamespace()
+#1 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(498): Illuminate\\Foundation\\Console\\Kernel->load(Array)
+#2 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(483): Illuminate\\Foundation\\Console\\Kernel->discoverCommands()
+#3 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(196): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#4 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2025-11-03 06:44:57] development.ERROR: Unable to detect application namespace. {"exception":"[object] (RuntimeException(code: 0): Unable to detect application namespace. at C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:1717)
+[stacktrace]
+#0 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(368): Illuminate\\Foundation\\Application->getNamespace()
+#1 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(498): Illuminate\\Foundation\\Console\\Kernel->load(Array)
+#2 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(483): Illuminate\\Foundation\\Console\\Kernel->discoverCommands()
+#3 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(196): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#4 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2025-11-03 06:45:57] development.ERROR: Unable to detect application namespace. {"exception":"[object] (RuntimeException(code: 0): Unable to detect application namespace. at C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:1717)
+[stacktrace]
+#0 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(368): Illuminate\\Foundation\\Application->getNamespace()
+#1 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(498): Illuminate\\Foundation\\Console\\Kernel->load(Array)
+#2 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(483): Illuminate\\Foundation\\Console\\Kernel->discoverCommands()
+#3 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(196): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#4 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2025-11-03 06:45:57] development.ERROR: Unable to detect application namespace. {"exception":"[object] (RuntimeException(code: 0): Unable to detect application namespace. at C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:1717)
+[stacktrace]
+#0 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(368): Illuminate\\Foundation\\Application->getNamespace()
+#1 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(498): Illuminate\\Foundation\\Console\\Kernel->load(Array)
+#2 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(483): Illuminate\\Foundation\\Console\\Kernel->discoverCommands()
+#3 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(196): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#4 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2025-11-03 06:46:57] development.ERROR: Unable to detect application namespace. {"exception":"[object] (RuntimeException(code: 0): Unable to detect application namespace. at C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:1717)
+[stacktrace]
+#0 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(368): Illuminate\\Foundation\\Application->getNamespace()
+#1 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(498): Illuminate\\Foundation\\Console\\Kernel->load(Array)
+#2 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(483): Illuminate\\Foundation\\Console\\Kernel->discoverCommands()
+#3 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(196): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#4 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2025-11-03 06:46:57] development.ERROR: Unable to detect application namespace. {"exception":"[object] (RuntimeException(code: 0): Unable to detect application namespace. at C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:1717)
+[stacktrace]
+#0 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(368): Illuminate\\Foundation\\Application->getNamespace()
+#1 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(498): Illuminate\\Foundation\\Console\\Kernel->load(Array)
+#2 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(483): Illuminate\\Foundation\\Console\\Kernel->discoverCommands()
+#3 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(196): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#4 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2025-11-03 06:47:57] development.ERROR: Unable to detect application namespace. {"exception":"[object] (RuntimeException(code: 0): Unable to detect application namespace. at C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:1717)
+[stacktrace]
+#0 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(368): Illuminate\\Foundation\\Application->getNamespace()
+#1 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(498): Illuminate\\Foundation\\Console\\Kernel->load(Array)
+#2 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(483): Illuminate\\Foundation\\Console\\Kernel->discoverCommands()
+#3 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(196): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#4 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2025-11-03 06:47:57] development.ERROR: Unable to detect application namespace. {"exception":"[object] (RuntimeException(code: 0): Unable to detect application namespace. at C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:1717)
+[stacktrace]
+#0 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(368): Illuminate\\Foundation\\Application->getNamespace()
+#1 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(498): Illuminate\\Foundation\\Console\\Kernel->load(Array)
+#2 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(483): Illuminate\\Foundation\\Console\\Kernel->discoverCommands()
+#3 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(196): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#4 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2025-11-03 06:47:57] development.ERROR: Unable to detect application namespace. {"exception":"[object] (RuntimeException(code: 0): Unable to detect application namespace. at C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:1717)
+[stacktrace]
+#0 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(368): Illuminate\\Foundation\\Application->getNamespace()
+#1 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(498): Illuminate\\Foundation\\Console\\Kernel->load(Array)
+#2 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(483): Illuminate\\Foundation\\Console\\Kernel->discoverCommands()
+#3 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(196): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#4 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2025-11-03 06:47:57] development.ERROR: Unable to detect application namespace. {"exception":"[object] (RuntimeException(code: 0): Unable to detect application namespace. at C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:1717)
+[stacktrace]
+#0 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(368): Illuminate\\Foundation\\Application->getNamespace()
+#1 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(498): Illuminate\\Foundation\\Console\\Kernel->load(Array)
+#2 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(483): Illuminate\\Foundation\\Console\\Kernel->discoverCommands()
+#3 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(196): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#4 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2025-11-03 06:48:57] development.ERROR: Unable to detect application namespace. {"exception":"[object] (RuntimeException(code: 0): Unable to detect application namespace. at C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:1717)
+[stacktrace]
+#0 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(368): Illuminate\\Foundation\\Application->getNamespace()
+#1 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(498): Illuminate\\Foundation\\Console\\Kernel->load(Array)
+#2 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(483): Illuminate\\Foundation\\Console\\Kernel->discoverCommands()
+#3 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(196): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#4 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2025-11-03 06:48:57] development.ERROR: Unable to detect application namespace. {"exception":"[object] (RuntimeException(code: 0): Unable to detect application namespace. at C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:1717)
+[stacktrace]
+#0 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(368): Illuminate\\Foundation\\Application->getNamespace()
+#1 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(498): Illuminate\\Foundation\\Console\\Kernel->load(Array)
+#2 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(483): Illuminate\\Foundation\\Console\\Kernel->discoverCommands()
+#3 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(196): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#4 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2025-11-03 06:49:57] development.ERROR: Unable to detect application namespace. {"exception":"[object] (RuntimeException(code: 0): Unable to detect application namespace. at C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:1717)
+[stacktrace]
+#0 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(368): Illuminate\\Foundation\\Application->getNamespace()
+#1 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(498): Illuminate\\Foundation\\Console\\Kernel->load(Array)
+#2 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(483): Illuminate\\Foundation\\Console\\Kernel->discoverCommands()
+#3 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(196): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#4 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2025-11-03 06:50:57] development.ERROR: Unable to detect application namespace. {"exception":"[object] (RuntimeException(code: 0): Unable to detect application namespace. at C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:1717)
+[stacktrace]
+#0 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(368): Illuminate\\Foundation\\Application->getNamespace()
+#1 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(498): Illuminate\\Foundation\\Console\\Kernel->load(Array)
+#2 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(483): Illuminate\\Foundation\\Console\\Kernel->discoverCommands()
+#3 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(196): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#4 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2025-11-03 06:51:55] development.ERROR: Unable to detect application namespace. {"exception":"[object] (RuntimeException(code: 0): Unable to detect application namespace. at C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:1717)
+[stacktrace]
+#0 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(368): Illuminate\\Foundation\\Application->getNamespace()
+#1 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(498): Illuminate\\Foundation\\Console\\Kernel->load(Array)
+#2 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(483): Illuminate\\Foundation\\Console\\Kernel->discoverCommands()
+#3 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(196): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#4 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2025-11-03 06:51:55] development.ERROR: Unable to detect application namespace. {"exception":"[object] (RuntimeException(code: 0): Unable to detect application namespace. at C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:1717)
+[stacktrace]
+#0 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(368): Illuminate\\Foundation\\Application->getNamespace()
+#1 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(498): Illuminate\\Foundation\\Console\\Kernel->load(Array)
+#2 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(483): Illuminate\\Foundation\\Console\\Kernel->discoverCommands()
+#3 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(196): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#4 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2025-11-03 06:51:56] development.ERROR: Unable to detect application namespace. {"exception":"[object] (RuntimeException(code: 0): Unable to detect application namespace. at C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:1717)
+[stacktrace]
+#0 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(368): Illuminate\\Foundation\\Application->getNamespace()
+#1 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(498): Illuminate\\Foundation\\Console\\Kernel->load(Array)
+#2 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(483): Illuminate\\Foundation\\Console\\Kernel->discoverCommands()
+#3 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(196): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#4 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2025-11-03 06:51:56] development.ERROR: Unable to detect application namespace. {"exception":"[object] (RuntimeException(code: 0): Unable to detect application namespace. at C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:1717)
+[stacktrace]
+#0 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(368): Illuminate\\Foundation\\Application->getNamespace()
+#1 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(498): Illuminate\\Foundation\\Console\\Kernel->load(Array)
+#2 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(483): Illuminate\\Foundation\\Console\\Kernel->discoverCommands()
+#3 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(196): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#4 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2025-11-03 06:51:58] development.ERROR: Unable to detect application namespace. {"exception":"[object] (RuntimeException(code: 0): Unable to detect application namespace. at C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:1717)
+[stacktrace]
+#0 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(368): Illuminate\\Foundation\\Application->getNamespace()
+#1 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(498): Illuminate\\Foundation\\Console\\Kernel->load(Array)
+#2 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(483): Illuminate\\Foundation\\Console\\Kernel->discoverCommands()
+#3 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(196): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#4 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2025-11-03 06:51:58] development.ERROR: Unable to detect application namespace. {"exception":"[object] (RuntimeException(code: 0): Unable to detect application namespace. at C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:1717)
+[stacktrace]
+#0 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(368): Illuminate\\Foundation\\Application->getNamespace()
+#1 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(498): Illuminate\\Foundation\\Console\\Kernel->load(Array)
+#2 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(483): Illuminate\\Foundation\\Console\\Kernel->discoverCommands()
+#3 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(196): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#4 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
+[2025-11-03 06:51:58] development.ERROR: Unable to detect application namespace. {"exception":"[object] (RuntimeException(code: 0): Unable to detect application namespace. at C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php:1717)
+[stacktrace]
+#0 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(368): Illuminate\\Foundation\\Application->getNamespace()
+#1 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(498): Illuminate\\Foundation\\Console\\Kernel->load(Array)
+#2 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(483): Illuminate\\Foundation\\Console\\Kernel->discoverCommands()
+#3 C:\\GitHub\\LaravelFieldServiceManagement\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(196): Illuminate\\Foundation\\Console\\Kernel->bootstrap()
+#4 Command line code(1): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#5 {main}
+"} 
