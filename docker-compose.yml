@@ -70,16 +70,15 @@ services:
       - laravel-network
     depends_on:
       mysql:
-        condition: service_started  # Changed from service_healthy to allow startup
+        condition: service_healthy  # Changed from service_healthy to allow startup
       redis:
         condition: service_started  # Changed from service_healthy to allow startup
-    # Healthcheck temporarily disabled for debugging
-    # healthcheck:
-    #   test: ["CMD", "curl", "-f", "http://localhost/health"]
-    #   interval: 30s
-    #   timeout: 10s
-    #   retries: 3
-    #   start_period: 40s
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
     logging:
       driver: "json-file"
       options:
@@ -105,8 +104,6 @@ services:
       MYSQL_ALLOW_EMPTY_PASSWORD: 'no'
     volumes:
       - mysql-data:/var/lib/mysql
-      # Temporarily disabled - testing database created manually if needed
-      # - ./docker/mysql-init:/docker-entrypoint-initdb.d
     networks:
       - laravel-network
     command: --default-authentication-plugin=mysql_native_password
