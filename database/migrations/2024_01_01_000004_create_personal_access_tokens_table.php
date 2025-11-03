@@ -21,7 +21,8 @@ return new class extends Migration
             $table->timestamp('expires_at')->nullable();
             $table->timestamps();
 
-            $table->index(['tokenable_type', 'tokenable_id']);
+            #cjr
+            # $table->index(['tokenable_type', 'tokenable_id']); #created by morphs
         });
     }
 
