@@ -83,4 +83,12 @@ Route::middleware([
         Route::get('/{asset}', \App\Livewire\Assets\Show::class)->name('show');
         Route::get('/{asset}/edit', \App\Livewire\Assets\Edit::class)->name('edit');
     });
+
+    // Tickets Module Routes
+    Route::prefix('tickets')->name('tickets.')->group(function () {
+        Route::get('/', \App\Livewire\Tickets\Index::class)->name('index');
+        Route::get('/create', \App\Livewire\Tickets\Create::class)->name('create');
+        Route::get('/{ticket}', \App\Livewire\Tickets\Show::class)->name('show');
+        Route::get('/{ticket}/edit', \App\Livewire\Tickets\Edit::class)->name('edit');
+    });
 });
