@@ -67,4 +67,12 @@ Route::middleware([
         Route::get('/{customer}', \App\Livewire\Customers\Show::class)->name('show');
         Route::get('/{customer}/edit', \App\Livewire\Customers\Edit::class)->name('edit');
     });
+
+    // Products Module Routes
+    Route::middleware(['can:view_products'])->prefix('products')->name('products.')->group(function () {
+        Route::get('/', \App\Livewire\Products\Index::class)->name('index');
+        Route::get('/create', \App\Livewire\Products\Create::class)->name('create');
+        Route::get('/{product}', \App\Livewire\Products\Show::class)->name('show');
+        Route::get('/{product}/edit', \App\Livewire\Products\Edit::class)->name('edit');
+    });
 });
