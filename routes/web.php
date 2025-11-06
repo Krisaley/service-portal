@@ -75,4 +75,12 @@ Route::middleware([
         Route::get('/{product}', \App\Livewire\Products\Show::class)->name('show');
         Route::get('/{product}/edit', \App\Livewire\Products\Edit::class)->name('edit');
     });
+
+    // Assets Module Routes
+    Route::middleware(['can:view_assets'])->prefix('assets')->name('assets.')->group(function () {
+        Route::get('/', \App\Livewire\Assets\Index::class)->name('index');
+        Route::get('/create', \App\Livewire\Assets\Create::class)->name('create');
+        Route::get('/{asset}', \App\Livewire\Assets\Show::class)->name('show');
+        Route::get('/{asset}/edit', \App\Livewire\Assets\Edit::class)->name('edit');
+    });
 });
