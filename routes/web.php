@@ -1,6 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HealthCheckController;
+
+// Health Check Routes (public, no auth required)
+Route::get('/health', [HealthCheckController::class, 'index'])->name('health');
+Route::get('/health/detailed', [HealthCheckController::class, 'detailed'])->name('health.detailed');
 
 Route::get('/', function () {
     return view('welcome');
