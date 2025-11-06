@@ -59,4 +59,12 @@ Route::middleware([
             return redirect()->route('modules.index')->with('error', $result['message']);
         })->name('uninstall');
     });
+
+    // Customers Module Routes
+    Route::middleware(['can:view_customers'])->prefix('customers')->name('customers.')->group(function () {
+        Route::get('/', \App\Livewire\Customers\Index::class)->name('index');
+        Route::get('/create', \App\Livewire\Customers\Create::class)->name('create');
+        Route::get('/{customer}', \App\Livewire\Customers\Show::class)->name('show');
+        Route::get('/{customer}/edit', \App\Livewire\Customers\Edit::class)->name('edit');
+    });
 });
